@@ -1,0 +1,192 @@
+//
+//  FindFriends.swift
+//  Invyte
+//
+//  Created by Arian Mohajer on 10/3/16.
+//  Copyright © 2016 Arian Mohajer. All rights reserved.
+//
+
+import Foundation
+import Firebase
+
+class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate{
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var searchBarTextField: UITextField!
+    var count = 0
+    var usernameResults = [String]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var ref = FIRDatabase.database().reference()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = self.backgroundImage.bounds
+        backgroundImage.addSubview(blurView)
+        self.view.backgroundColor = UIColor.black
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        FriendSystem.system.addUserObserver { () in
+            self.tableView.reloadData()
+        }
+    }
+    
+    @IBAction func searchButtonTapped(_ sender: AnyObject)
+    {
+        //THIS CODE ALL WORKS TO ESTABLISH A FRIENDSHIP BETWEEN THE USER AND THE USERNAME TYPED INTO THE SEARCH BAR. 
+        //IT DOES NOT ALLOW SEARCH RESULTS TO BE DISPLAYED.
+        //DO NOT DELETE
+//        var usernameEntered = ""
+//        if(self.searchBarTextField.text != "")
+//        {
+//            usernameEntered = self.searchBarTextField.text!
+//            
+//            self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: usernameEntered).observeSingleEvent(of: .value, with: { (snapshot) in
+//                
+//                if(snapshot.value is NSNull)
+//                {
+//                    // No user
+//                    print("a user with that username does not exist")
+//                }
+//                    
+//                else
+//                {
+//                    //User exists! Add user to friends list.
+//                    
+//                    let myUID = FIRAuth.auth()?.currentUser?.uid
+//                    var theirUID = ""
+//                    
+//
+//                    //Get the current count of friends
+//                    self.ref.child("users").child(myUID!).child("friendCount").observeSingleEvent(of: FIRDataEventType.value, with: { (secondSnapshot) in
+//                        let friendCount = secondSnapshot.value! as! Int
+//                        let newFriendCount = friendCount + 1
+//                        
+//                        //Set the new number of friends
+//                        self.ref.child("users").child(myUID!).child("friendCount").setValue(newFriendCount)
+//                        
+//                        //Get the friend's UID
+//                        self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: usernameEntered).observeSingleEvent(of: FIRDataEventType.childAdded, with: { (thirdSnapshot) in
+//                            theirUID = thirdSnapshot.key
+//                            
+//                            //Establish the friendship (at the moment, a one-way friendship)
+//                            self.ref.child("users").child(myUID!).child("Friends").child(String(newFriendCount)).setValue(theirUID)
+//                        })
+//                        
+//                        
+//                    })
+//                }
+//                
+//                }, withCancel: { (error) in
+//                    print(error)
+//            })
+//            
+//        }
+        usernameResults.removeAll()
+        count = 0
+        tableView.reloadData()
+        getResults()
+    }
+    
+    func getResults()
+    {
+        var usernameEntered = ""
+        if(self.searchBarTextField.text != "")
+        {
+            usernameEntered = self.searchBarTextField.text!
+            //Search for the text entered as a username first, then as a first + last name.
+            //If there are no results, display "no results found"
+            //If there are results, append the UID of the results to the text field
+            
+            //If the username exists.
+            self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: usernameEntered).observe(.value, with: { (snapshot) in
+                    if(snapshot.value is NSNull)
+                    {
+                        //No users with that username
+                    }
+                    else
+                    {
+                        //That username exists, append that result to the list!
+                        //append to an array
+                        if let snapDict = snapshot.value as? [String:AnyObject]{
+                            for each in snapDict{
+                                var result = ""
+                                result.append(each.value["Username"] as! String)
+                                self.usernameResults.append(result)
+                            }
+                            self.count = snapDict.count
+                        }
+                        self.tableView.reloadData()
+                    }
+                }, withCancel: { (error) in
+                    print(error)
+            })
+            
+            //If the name exists
+            self.ref.child("users").queryOrdered(byChild: "Name").queryEqual(toValue: usernameEntered.lowercased()).observe(.value, with: { (secondSnapshot) in
+                    if(secondSnapshot.value is NSNull)
+                    {
+                        //No users with that full name
+                    }
+                    else
+                    {
+                        if let snapDict = secondSnapshot.value as? [String:AnyObject]{
+                            for each in snapDict{
+                                var result = ""
+                                result.append(each.value["Username"] as! String)
+                                self.usernameResults.append(result)
+                            }
+                            self.count = snapDict.count
+                        }
+                        self.tableView.reloadData()
+                    }
+                }
+            )
+        }
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+        
+        if cell == nil
+        {
+            tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+        }
+        
+        cell!.emailLabel.text = usernameResults[indexPath.row]
+        cell!.button.setTitle("Add", for: UIControlState.normal)
+        cell!.button.isEnabled = true
+        
+        cell!.setFunction {
+            var theirUID = ""
+            self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: self.usernameResults[indexPath.row]).observeSingleEvent(of: FIRDataEventType.childAdded, with: { (thirdSnapshot) in
+                theirUID = thirdSnapshot.key
+            FriendSystem.system.sendRequestToUser(theirUID)
+                cell!.button.setTitle("Request sent!", for: UIControlState.normal)
+                cell!.button.isEnabled = false
+        })
+        }
+        
+        return cell!
+
+    }
+    
+}
+
+

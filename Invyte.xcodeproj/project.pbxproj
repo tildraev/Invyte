@@ -1,0 +1,810 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B64C0539673ED2033DE5C98D /* Pods_InvyteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16FC02A94FF897FDECF356 /* Pods_InvyteUITests.framework */; };
+		D20893591DA4C22A0054AB34 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20893581DA4C22A0054AB34 /* MainMenu.swift */; };
+		D24578181DA2CEAC0069B686 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578171DA2CEAC0069B686 /* CreateEvent.swift */; };
+		D245781A1DA2CEC20069B686 /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578191DA2CEC20069B686 /* FindFriends.swift */; };
+		D245781C1DA2CEDC0069B686 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245781B1DA2CEDC0069B686 /* UserInfo.swift */; };
+		D245781E1DA2CEFF0069B686 /* ShareAndRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245781D1DA2CEFF0069B686 /* ShareAndRate.swift */; };
+		D24578201DA2CF0A0069B686 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245781F1DA2CF0A0069B686 /* Help.swift */; };
+		D24578221DA2CF1D0069B686 /* SupportInvyte.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578211DA2CF1D0069B686 /* SupportInvyte.swift */; };
+		D24578251DA2DE5F0069B686 /* ViewInvytes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578241DA2DE5F0069B686 /* ViewInvytes.swift */; };
+		D24578271DA2E6EE0069B686 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578261DA2E6EE0069B686 /* LoginScreen.swift */; };
+		D245782B1DA2F9C10069B686 /* Game of Thrones.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D245782A1DA2F9C10069B686 /* Game of Thrones.ttf */; };
+		D27398261DA070A200480B4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27398251DA070A200480B4B /* AppDelegate.swift */; };
+		D273982B1DA070A200480B4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D27398291DA070A200480B4B /* Main.storyboard */; };
+		D273982D1DA070A200480B4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D273982C1DA070A200480B4B /* Assets.xcassets */; };
+		D27398301DA070A200480B4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D273982E1DA070A200480B4B /* LaunchScreen.storyboard */; };
+		D273983B1DA070A200480B4B /* InvyteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273983A1DA070A200480B4B /* InvyteTests.swift */; };
+		D27398461DA070A200480B4B /* InvyteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27398451DA070A200480B4B /* InvyteUITests.swift */; };
+		D27398591DA076CA00480B4B /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27398581DA076CA00480B4B /* SWRevealViewController.m */; };
+		D273985B1DA07C7000480B4B /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D273985A1DA07C7000480B4B /* BackTableVC.swift */; };
+		D27F570F1DB5FEBD00212CCB /* FriendSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F570E1DB5FEBD00212CCB /* FriendSystem.swift */; };
+		D27F57111DB6015600212CCB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57101DB6015600212CCB /* User.swift */; };
+		D27F57131DB6037300212CCB /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57121DB6037300212CCB /* UserCell.swift */; };
+		D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57141DB603FF00212CCB /* RequestViewController.swift */; };
+		D27F57171DB604ED00212CCB /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57161DB604ED00212CCB /* FriendViewController.swift */; };
+		D27F57191DB6227900212CCB /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27F57181DB6227900212CCB /* UserCell.xib */; };
+		D2BC12731DA5F85E002142CE /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC12721DA5F85E002142CE /* CreateAccount.swift */; };
+		D2BC12751DA603F4002142CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2BC12741DA603F4002142CE /* GoogleService-Info.plist */; };
+		ED6490B12F6905AFA7311FD4 /* Pods_InvyteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A20A10B7508BFB8A8450FCE /* Pods_InvyteTests.framework */; };
+		F590FACF9B64CFB685FDEFB6 /* Pods_Invyte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD0B0DF424E307078FE5572 /* Pods_Invyte.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D27398371DA070A200480B4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D273981A1DA070A200480B4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D27398211DA070A200480B4B;
+			remoteInfo = Invyte;
+		};
+		D27398421DA070A200480B4B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D273981A1DA070A200480B4B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D27398211DA070A200480B4B;
+			remoteInfo = Invyte;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00C9C1EA92DD7AEE51FFA094 /* Pods-Invyte.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invyte.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Invyte/Pods-Invyte.debug.xcconfig"; sourceTree = "<group>"; };
+		2A20A10B7508BFB8A8450FCE /* Pods_InvyteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InvyteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A518FC1F5BEEF6E383D37E5 /* Pods-InvyteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteTests/Pods-InvyteTests.release.xcconfig"; sourceTree = "<group>"; };
+		4D16FC02A94FF897FDECF356 /* Pods_InvyteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InvyteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		551E9AE620FF3C03C52D552D /* Pods-Invyte.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Invyte.release.xcconfig"; path = "Pods/Target Support Files/Pods-Invyte/Pods-Invyte.release.xcconfig"; sourceTree = "<group>"; };
+		7BD0B0DF424E307078FE5572 /* Pods_Invyte.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Invyte.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		990D5E1075E4C36432FF21ED /* Pods-InvyteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteTests/Pods-InvyteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF85FD69616F742B32538E7F /* Pods-InvyteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteUITests/Pods-InvyteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D20893581DA4C22A0054AB34 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		D24578171DA2CEAC0069B686 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
+		D24578191DA2CEC20069B686 /* FindFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
+		D245781B1DA2CEDC0069B686 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		D245781D1DA2CEFF0069B686 /* ShareAndRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareAndRate.swift; sourceTree = "<group>"; };
+		D245781F1DA2CF0A0069B686 /* Help.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Help.swift; sourceTree = "<group>"; };
+		D24578211DA2CF1D0069B686 /* SupportInvyte.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportInvyte.swift; sourceTree = "<group>"; };
+		D24578241DA2DE5F0069B686 /* ViewInvytes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInvytes.swift; sourceTree = "<group>"; };
+		D24578261DA2E6EE0069B686 /* LoginScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		D245782A1DA2F9C10069B686 /* Game of Thrones.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Game of Thrones.ttf"; sourceTree = "<group>"; };
+		D27398221DA070A200480B4B /* Invyte.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Invyte.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27398251DA070A200480B4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D273982A1DA070A200480B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D273982C1DA070A200480B4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D273982F1DA070A200480B4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D27398311DA070A200480B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D27398361DA070A200480B4B /* InvyteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvyteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D273983A1DA070A200480B4B /* InvyteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvyteTests.swift; sourceTree = "<group>"; };
+		D273983C1DA070A200480B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D27398411DA070A200480B4B /* InvyteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvyteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27398451DA070A200480B4B /* InvyteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvyteUITests.swift; sourceTree = "<group>"; };
+		D27398471DA070A200480B4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D27398561DA076C900480B4B /* Invyte-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Invyte-Bridging-Header.h"; sourceTree = "<group>"; };
+		D27398571DA076CA00480B4B /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		D27398581DA076CA00480B4B /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		D273985A1DA07C7000480B4B /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
+		D27F570E1DB5FEBD00212CCB /* FriendSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendSystem.swift; sourceTree = "<group>"; };
+		D27F57101DB6015600212CCB /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D27F57121DB6037300212CCB /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		D27F57141DB603FF00212CCB /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		D27F57161DB604ED00212CCB /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
+		D27F57181DB6227900212CCB /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		D2BC12721DA5F85E002142CE /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
+		D2BC12741DA603F4002142CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E465E73CD7D8ED21EC97862F /* Pods-InvyteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteUITests/Pods-InvyteUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D273981F1DA070A200480B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F590FACF9B64CFB685FDEFB6 /* Pods_Invyte.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27398331DA070A200480B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED6490B12F6905AFA7311FD4 /* Pods_InvyteTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D273983E1DA070A200480B4B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B64C0539673ED2033DE5C98D /* Pods_InvyteUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		101C0BC8ECEF6331334385B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				00C9C1EA92DD7AEE51FFA094 /* Pods-Invyte.debug.xcconfig */,
+				551E9AE620FF3C03C52D552D /* Pods-Invyte.release.xcconfig */,
+				990D5E1075E4C36432FF21ED /* Pods-InvyteTests.debug.xcconfig */,
+				4A518FC1F5BEEF6E383D37E5 /* Pods-InvyteTests.release.xcconfig */,
+				AF85FD69616F742B32538E7F /* Pods-InvyteUITests.debug.xcconfig */,
+				E465E73CD7D8ED21EC97862F /* Pods-InvyteUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		80F240A55CBFFA1B75DCBC96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BD0B0DF424E307078FE5572 /* Pods_Invyte.framework */,
+				2A20A10B7508BFB8A8450FCE /* Pods_InvyteTests.framework */,
+				4D16FC02A94FF897FDECF356 /* Pods_InvyteUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D24578231DA2CF290069B686 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D20893581DA4C22A0054AB34 /* MainMenu.swift */,
+				D24578171DA2CEAC0069B686 /* CreateEvent.swift */,
+				D24578241DA2DE5F0069B686 /* ViewInvytes.swift */,
+				D24578191DA2CEC20069B686 /* FindFriends.swift */,
+				D245781B1DA2CEDC0069B686 /* UserInfo.swift */,
+				D245781D1DA2CEFF0069B686 /* ShareAndRate.swift */,
+				D245781F1DA2CF0A0069B686 /* Help.swift */,
+				D24578211DA2CF1D0069B686 /* SupportInvyte.swift */,
+				D2BC12721DA5F85E002142CE /* CreateAccount.swift */,
+				D24578261DA2E6EE0069B686 /* LoginScreen.swift */,
+				D27F57161DB604ED00212CCB /* FriendViewController.swift */,
+				D27F57141DB603FF00212CCB /* RequestViewController.swift */,
+				D27F570E1DB5FEBD00212CCB /* FriendSystem.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D27398191DA070A200480B4B = {
+			isa = PBXGroup;
+			children = (
+				D27398241DA070A200480B4B /* Invyte */,
+				D27398391DA070A200480B4B /* InvyteTests */,
+				D27398441DA070A200480B4B /* InvyteUITests */,
+				D27398231DA070A200480B4B /* Products */,
+				101C0BC8ECEF6331334385B7 /* Pods */,
+				80F240A55CBFFA1B75DCBC96 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D27398231DA070A200480B4B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D27398221DA070A200480B4B /* Invyte.app */,
+				D27398361DA070A200480B4B /* InvyteTests.xctest */,
+				D27398411DA070A200480B4B /* InvyteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D27398241DA070A200480B4B /* Invyte */ = {
+			isa = PBXGroup;
+			children = (
+				D2BC12741DA603F4002142CE /* GoogleService-Info.plist */,
+				D245782A1DA2F9C10069B686 /* Game of Thrones.ttf */,
+				D27398251DA070A200480B4B /* AppDelegate.swift */,
+				D27398291DA070A200480B4B /* Main.storyboard */,
+				D24578231DA2CF290069B686 /* ViewControllers */,
+				D273985A1DA07C7000480B4B /* BackTableVC.swift */,
+				D273982C1DA070A200480B4B /* Assets.xcassets */,
+				D273982E1DA070A200480B4B /* LaunchScreen.storyboard */,
+				D27398551DA0768C00480B4B /* Supporting Files */,
+				D27F57121DB6037300212CCB /* UserCell.swift */,
+				D27F57181DB6227900212CCB /* UserCell.xib */,
+				D27F57101DB6015600212CCB /* User.swift */,
+			);
+			path = Invyte;
+			sourceTree = "<group>";
+		};
+		D27398391DA070A200480B4B /* InvyteTests */ = {
+			isa = PBXGroup;
+			children = (
+				D273983A1DA070A200480B4B /* InvyteTests.swift */,
+				D273983C1DA070A200480B4B /* Info.plist */,
+			);
+			path = InvyteTests;
+			sourceTree = "<group>";
+		};
+		D27398441DA070A200480B4B /* InvyteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D27398451DA070A200480B4B /* InvyteUITests.swift */,
+				D27398471DA070A200480B4B /* Info.plist */,
+			);
+			path = InvyteUITests;
+			sourceTree = "<group>";
+		};
+		D27398551DA0768C00480B4B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D27398311DA070A200480B4B /* Info.plist */,
+				D27398571DA076CA00480B4B /* SWRevealViewController.h */,
+				D27398581DA076CA00480B4B /* SWRevealViewController.m */,
+				D27398561DA076C900480B4B /* Invyte-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D27398211DA070A200480B4B /* Invyte */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D273984A1DA070A200480B4B /* Build configuration list for PBXNativeTarget "Invyte" */;
+			buildPhases = (
+				EECE80EFFF240FBFF9115618 /* [CP] Check Pods Manifest.lock */,
+				D273981E1DA070A200480B4B /* Sources */,
+				D273981F1DA070A200480B4B /* Frameworks */,
+				D27398201DA070A200480B4B /* Resources */,
+				32D4B5D14B007106BC37F5DC /* [CP] Embed Pods Frameworks */,
+				E28684BD4344011AB161FC9F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Invyte;
+			productName = Invyte;
+			productReference = D27398221DA070A200480B4B /* Invyte.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D27398351DA070A200480B4B /* InvyteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D273984D1DA070A200480B4B /* Build configuration list for PBXNativeTarget "InvyteTests" */;
+			buildPhases = (
+				93A8C4473BB75CF48F8E24D9 /* [CP] Check Pods Manifest.lock */,
+				D27398321DA070A200480B4B /* Sources */,
+				D27398331DA070A200480B4B /* Frameworks */,
+				D27398341DA070A200480B4B /* Resources */,
+				C3D4DC7EB98B5BDEE415CA30 /* [CP] Embed Pods Frameworks */,
+				EF2EDD30C62C41496747D362 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D27398381DA070A200480B4B /* PBXTargetDependency */,
+			);
+			name = InvyteTests;
+			productName = InvyteTests;
+			productReference = D27398361DA070A200480B4B /* InvyteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D27398401DA070A200480B4B /* InvyteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27398501DA070A200480B4B /* Build configuration list for PBXNativeTarget "InvyteUITests" */;
+			buildPhases = (
+				B89C1571FF27A828C14F436C /* [CP] Check Pods Manifest.lock */,
+				D273983D1DA070A200480B4B /* Sources */,
+				D273983E1DA070A200480B4B /* Frameworks */,
+				D273983F1DA070A200480B4B /* Resources */,
+				161A58BF2BD2DEADE2B5A731 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D27398431DA070A200480B4B /* PBXTargetDependency */,
+			);
+			name = InvyteUITests;
+			productName = InvyteUITests;
+			productReference = D27398411DA070A200480B4B /* InvyteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D273981A1DA070A200480B4B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Arian Mohajer";
+				TargetAttributes = {
+					D27398211DA070A200480B4B = {
+						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
+					};
+					D27398351DA070A200480B4B = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D27398211DA070A200480B4B;
+					};
+					D27398401DA070A200480B4B = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D27398211DA070A200480B4B;
+					};
+				};
+			};
+			buildConfigurationList = D273981D1DA070A200480B4B /* Build configuration list for PBXProject "Invyte" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D27398191DA070A200480B4B;
+			productRefGroup = D27398231DA070A200480B4B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D27398211DA070A200480B4B /* Invyte */,
+				D27398351DA070A200480B4B /* InvyteTests */,
+				D27398401DA070A200480B4B /* InvyteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D27398201DA070A200480B4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27398301DA070A200480B4B /* LaunchScreen.storyboard in Resources */,
+				D245782B1DA2F9C10069B686 /* Game of Thrones.ttf in Resources */,
+				D27F57191DB6227900212CCB /* UserCell.xib in Resources */,
+				D2BC12751DA603F4002142CE /* GoogleService-Info.plist in Resources */,
+				D273982D1DA070A200480B4B /* Assets.xcassets in Resources */,
+				D273982B1DA070A200480B4B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27398341DA070A200480B4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D273983F1DA070A200480B4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		161A58BF2BD2DEADE2B5A731 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InvyteUITests/Pods-InvyteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		32D4B5D14B007106BC37F5DC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Invyte/Pods-Invyte-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93A8C4473BB75CF48F8E24D9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B89C1571FF27A828C14F436C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D4DC7EB98B5BDEE415CA30 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InvyteTests/Pods-InvyteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E28684BD4344011AB161FC9F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Invyte/Pods-Invyte-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EECE80EFFF240FBFF9115618 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EF2EDD30C62C41496747D362 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InvyteTests/Pods-InvyteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D273981E1DA070A200480B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D24578221DA2CF1D0069B686 /* SupportInvyte.swift in Sources */,
+				D24578251DA2DE5F0069B686 /* ViewInvytes.swift in Sources */,
+				D27F570F1DB5FEBD00212CCB /* FriendSystem.swift in Sources */,
+				D245781E1DA2CEFF0069B686 /* ShareAndRate.swift in Sources */,
+				D24578181DA2CEAC0069B686 /* CreateEvent.swift in Sources */,
+				D2BC12731DA5F85E002142CE /* CreateAccount.swift in Sources */,
+				D24578201DA2CF0A0069B686 /* Help.swift in Sources */,
+				D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */,
+				D24578271DA2E6EE0069B686 /* LoginScreen.swift in Sources */,
+				D27F57131DB6037300212CCB /* UserCell.swift in Sources */,
+				D27F57111DB6015600212CCB /* User.swift in Sources */,
+				D245781A1DA2CEC20069B686 /* FindFriends.swift in Sources */,
+				D20893591DA4C22A0054AB34 /* MainMenu.swift in Sources */,
+				D27F57171DB604ED00212CCB /* FriendViewController.swift in Sources */,
+				D27398261DA070A200480B4B /* AppDelegate.swift in Sources */,
+				D273985B1DA07C7000480B4B /* BackTableVC.swift in Sources */,
+				D245781C1DA2CEDC0069B686 /* UserInfo.swift in Sources */,
+				D27398591DA076CA00480B4B /* SWRevealViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D27398321DA070A200480B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D273983B1DA070A200480B4B /* InvyteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D273983D1DA070A200480B4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27398461DA070A200480B4B /* InvyteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D27398381DA070A200480B4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D27398211DA070A200480B4B /* Invyte */;
+			targetProxy = D27398371DA070A200480B4B /* PBXContainerItemProxy */;
+		};
+		D27398431DA070A200480B4B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D27398211DA070A200480B4B /* Invyte */;
+			targetProxy = D27398421DA070A200480B4B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D27398291DA070A200480B4B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D273982A1DA070A200480B4B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D273982E1DA070A200480B4B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D273982F1DA070A200480B4B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D27398481DA070A200480B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D27398491DA070A200480B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D273984B1DA070A200480B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00C9C1EA92DD7AEE51FFA094 /* Pods-Invyte.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Invyte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.Invyte;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Invyte/Invyte-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D273984C1DA070A200480B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 551E9AE620FF3C03C52D552D /* Pods-Invyte.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = Invyte/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.Invyte;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Invyte/Invyte-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D273984E1DA070A200480B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 990D5E1075E4C36432FF21ED /* Pods-InvyteTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = InvyteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.InvyteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Invyte.app/Invyte";
+			};
+			name = Debug;
+		};
+		D273984F1DA070A200480B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A518FC1F5BEEF6E383D37E5 /* Pods-InvyteTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = InvyteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.InvyteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Invyte.app/Invyte";
+			};
+			name = Release;
+		};
+		D27398511DA070A200480B4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF85FD69616F742B32538E7F /* Pods-InvyteUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = InvyteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.InvyteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Invyte;
+			};
+			name = Debug;
+		};
+		D27398521DA070A200480B4B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E465E73CD7D8ED21EC97862F /* Pods-InvyteUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				INFOPLIST_FILE = InvyteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.InvyteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Invyte;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D273981D1DA070A200480B4B /* Build configuration list for PBXProject "Invyte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27398481DA070A200480B4B /* Debug */,
+				D27398491DA070A200480B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D273984A1DA070A200480B4B /* Build configuration list for PBXNativeTarget "Invyte" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D273984B1DA070A200480B4B /* Debug */,
+				D273984C1DA070A200480B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D273984D1DA070A200480B4B /* Build configuration list for PBXNativeTarget "InvyteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D273984E1DA070A200480B4B /* Debug */,
+				D273984F1DA070A200480B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27398501DA070A200480B4B /* Build configuration list for PBXNativeTarget "InvyteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27398511DA070A200480B4B /* Debug */,
+				D27398521DA070A200480B4B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D273981A1DA070A200480B4B /* Project object */;
+}
