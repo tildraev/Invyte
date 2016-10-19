@@ -454,6 +454,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-BK-I1M">
+                                <frame key="frameInset" minX="145" minY="455" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Find Friends">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="findFriendsButtonTapped:" destination="iKA-Fb-vzF" eventType="touchUpInside" id="XHj-Hd-4ex"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -482,6 +492,8 @@
                     <navigationItem key="navigationItem" id="Vzf-1z-UDx"/>
                     <connections>
                         <outlet property="backgroundImage" destination="N3L-sd-thC" id="zFS-QV-7EE"/>
+                        <outlet property="eventDescriptionTextField" destination="NgO-yG-euX" id="vsQ-zt-vYe"/>
+                        <outlet property="eventTitleTextField" destination="WtA-z5-xqn" id="HN6-2P-hAP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIG-bq-5GM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -687,6 +699,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngm-ux-tuL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2665" y="-663"/>
+        </scene>
+        <!--Invite List-->
+        <scene sceneID="tid-8j-USV">
+            <objects>
+                <viewController storyboardIdentifier="InviteList" id="z0a-9Y-V4w" customClass="InviteList" customModule="Invyte" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qh3-E9-bvi"/>
+                        <viewControllerLayoutGuide type="bottom" id="GEy-9N-NkH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0PK-pz-Tte">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GatsbyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-j4-m1r"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="42M-91-695">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-ra-TkT">
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="z0a-9Y-V4w" eventType="touchUpInside" id="2T9-8s-uzv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GEy-9N-NkH" firstAttribute="top" secondItem="ajn-ra-TkT" secondAttribute="bottom" constant="8" symbolic="YES" id="02p-07-1lk"/>
+                            <constraint firstItem="42M-91-695" firstAttribute="top" secondItem="qh3-E9-bvi" secondAttribute="bottom" id="CaJ-lI-J4O"/>
+                            <constraint firstItem="ajn-ra-TkT" firstAttribute="top" secondItem="42M-91-695" secondAttribute="bottom" constant="17" id="Gd6-Y3-1Cw"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="bottom" secondItem="GEy-9N-NkH" secondAttribute="top" id="LPm-wg-D3q"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="centerX" secondItem="ajn-ra-TkT" secondAttribute="centerX" id="LZX-e1-c8b"/>
+                            <constraint firstAttribute="trailing" secondItem="1VZ-j4-m1r" secondAttribute="trailing" id="ZXP-9H-VDV"/>
+                            <constraint firstItem="42M-91-695" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leadingMargin" id="cWa-3r-pJP"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="top" secondItem="0PK-pz-Tte" secondAttribute="top" id="lBA-xf-6aq"/>
+                            <constraint firstItem="42M-91-695" firstAttribute="centerX" secondItem="ajn-ra-TkT" secondAttribute="centerX" id="rUH-CK-0Cz"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leading" id="wDP-MP-ARA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="1VZ-j4-m1r" id="f6E-4C-COp"/>
+                        <outlet property="tableView" destination="42M-91-695" id="tq1-2H-1WY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FCy-QR-bSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3405.5999999999999" y="-663.41829085457277"/>
         </scene>
         <!--Friend View Controller-->
         <scene sceneID="0RK-4f-mWt">
