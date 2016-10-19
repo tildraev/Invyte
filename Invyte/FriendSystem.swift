@@ -36,7 +36,15 @@ class FriendSystem {
         return CURRENT_USER_REF.child("Requests")
     }
     
+    /** The Firebase reference to the current user's event */
+    var CURRENT_USER_EVENTS_REF: FIRDatabaseReference {
+        return CURRENT_USER_REF.child("Events")
+    }
     
+    /** The Firebase reference to the current user's event requests*/
+    var CURRENT_USER_EVENT_REQUESTS_REF: FIRDatabaseReference {
+        return CURRENT_USER_REF.child("Event Requests")
+    }
     
     /** The current user's id */
     var CURRENT_USER_ID: String {
@@ -161,7 +169,48 @@ class FriendSystem {
         USER_REF.removeAllObservers()
     }
     
+    //MARK: - Events
+    /**The list of all events of the current user*/
+    var eventList = [Event]()
     
+    func addEventRequestObserver(_ update: @escaping () -> Void) {
+        CURRENT_USER_EVENT_REQUESTS_REF.observe(FIRDataEventType.value, with: { (snapshot) in
+            self.eventList.removeAll()
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                let id = child.key
+                self.eventList.append(Event(creatorID: id, eventTitleAndDescription: child.value as! String))
+                update()
+                
+            }
+            // If there are no children, run completion here instead
+            if snapshot.childrenCount == 0 {
+                update()
+            }
+        }) { (error) in
+            print(error)
+        }
+    }
+    
+    func removeEventObserver(){
+        CURRENT_USER_EVENTS_REF.removeAllObservers()
+    }
+    
+    /** Sends an event request to the user with the specified id */
+    func sendRequestToUser(userID: String,_ event: Event) {
+        USER_REF.child(userID).child("Event Requests").child(event.titleAndDescription).setValue("true")
+    }
+    
+    /** Removes events from the specified user */
+    func removeEvent(_ userID: String) {
+        CURRENT_USER_REF.child("Events").child(userID).removeValue()
+        USER_REF.child(userID).child("Events").child(CURRENT_USER_ID).removeValue()
+    }
+    
+    /** Accepts an even from user with the specified ID */
+    func acceptEventRequest(_ userID: String, event: Event){
+        CURRENT_USER_REF.child("Event Requests").child(userID).removeValue()
+        CURRENT_USER_REF.child("Events").child(userID).setValue(true)
+    }
     
     // MARK: - All friends
     /** The list of all friends of the current user. */

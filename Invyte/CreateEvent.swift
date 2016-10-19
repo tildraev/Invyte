@@ -10,6 +10,8 @@ import Foundation
 
 class CreateEvent : UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var eventTitleTextField: UITextView!
+    @IBOutlet weak var eventDescriptionTextField: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +29,27 @@ class CreateEvent : UIViewController {
         super.didReceiveMemoryWarning()
     }
 
+    @IBAction func findFriendsButtonTapped(_ sender: AnyObject) {
+        if eventTitleTextField.text != "" && eventDescriptionTextField.text != ""
+        {
+            //Create the event reference in Firebase
+            let description = eventTitleTextField.text! + eventDescriptionTextField.text!
+            FriendSystem.system.CURRENT_USER_EVENTS_REF.child(FriendSystem.system.CURRENT_USER_ID).setValue(description)
+            
+            //Present the invite list
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "InviteList")
+            self.present(vc!, animated: true, completion: nil)
+        }
+        else
+        {
+            presentAlertView(issue: "Please fill out a title and description for your event.")
+        }
+    }
+    
+    func presentAlertView(issue: String) {
+        let alertController = UIAlertController(title: "Error", message: issue, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(defaultAction)
+        present(alertController, animated: true, completion: nil)
+    }
 }
