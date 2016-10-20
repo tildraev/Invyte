@@ -56,17 +56,19 @@ class FriendSystem {
     /** Gets the current User object for the specified user id */
     func getCurrentUser(_ completion: @escaping (User) -> Void) {
         CURRENT_USER_REF.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let id = snapshot.key
-            completion(User(userEmail: email, userID: id))
+            completion(User(username: username, userEmail: email, userID: id))
         })
     }
     /** Gets the User object for the specified user id */
     func getUser(_ userID: String, completion: @escaping (User) -> Void) {
         USER_REF.child(userID).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let id = snapshot.key
-            completion(User(userEmail: email, userID: id))
+            completion(User(username: username, userEmail: email, userID: id))
         })
     }
     
@@ -156,9 +158,10 @@ class FriendSystem {
         FriendSystem.system.USER_REF.observe(FIRDataEventType.value, with: { (snapshot) in
             self.userList.removeAll()
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                let username = child.childSnapshot(forPath: "Username").value as! String
                 let email = child.childSnapshot(forPath: "Email").value as! String
                 if email != FIRAuth.auth()?.currentUser?.email! {
-                    self.userList.append(User(userEmail: email, userID: child.key))
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key))
                 }
             }
             update()
