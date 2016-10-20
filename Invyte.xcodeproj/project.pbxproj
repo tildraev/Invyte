@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B64C0539673ED2033DE5C98D /* Pods_InvyteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D16FC02A94FF897FDECF356 /* Pods_InvyteUITests.framework */; };
 		D20893591DA4C22A0054AB34 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20893581DA4C22A0054AB34 /* MainMenu.swift */; };
+		D22EA9A21DB73F0200923A5B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22EA9A11DB73F0200923A5B /* Event.swift */; };
+		D22EA9A41DB73F7C00923A5B /* InviteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22EA9A31DB73F7C00923A5B /* InviteList.swift */; };
 		D24578181DA2CEAC0069B686 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578171DA2CEAC0069B686 /* CreateEvent.swift */; };
 		D245781A1DA2CEC20069B686 /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578191DA2CEC20069B686 /* FindFriends.swift */; };
 		D245781C1DA2CEDC0069B686 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245781B1DA2CEDC0069B686 /* UserInfo.swift */; };
@@ -65,6 +67,8 @@
 		990D5E1075E4C36432FF21ED /* Pods-InvyteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteTests/Pods-InvyteTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AF85FD69616F742B32538E7F /* Pods-InvyteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteUITests/Pods-InvyteUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D20893581DA4C22A0054AB34 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		D22EA9A11DB73F0200923A5B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		D22EA9A31DB73F7C00923A5B /* InviteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteList.swift; sourceTree = "<group>"; };
 		D24578171DA2CEAC0069B686 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		D24578191DA2CEC20069B686 /* FindFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
 		D245781B1DA2CEDC0069B686 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				D27F57161DB604ED00212CCB /* FriendViewController.swift */,
 				D27F57141DB603FF00212CCB /* RequestViewController.swift */,
 				D27F570E1DB5FEBD00212CCB /* FriendSystem.swift */,
+				D22EA9A31DB73F7C00923A5B /* InviteList.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				D27F57121DB6037300212CCB /* UserCell.swift */,
 				D27F57181DB6227900212CCB /* UserCell.xib */,
 				D27F57101DB6015600212CCB /* User.swift */,
+				D22EA9A11DB73F0200923A5B /* Event.swift */,
 			);
 			path = Invyte;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 				D245781E1DA2CEFF0069B686 /* ShareAndRate.swift in Sources */,
 				D24578181DA2CEAC0069B686 /* CreateEvent.swift in Sources */,
 				D2BC12731DA5F85E002142CE /* CreateAccount.swift in Sources */,
+				D22EA9A21DB73F0200923A5B /* Event.swift in Sources */,
 				D24578201DA2CF0A0069B686 /* Help.swift in Sources */,
 				D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */,
 				D24578271DA2E6EE0069B686 /* LoginScreen.swift in Sources */,
@@ -528,6 +535,7 @@
 				D27398261DA070A200480B4B /* AppDelegate.swift in Sources */,
 				D273985B1DA07C7000480B4B /* BackTableVC.swift in Sources */,
 				D245781C1DA2CEDC0069B686 /* UserInfo.swift in Sources */,
+				D22EA9A41DB73F7C00923A5B /* InviteList.swift in Sources */,
 				D27398591DA076CA00480B4B /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
