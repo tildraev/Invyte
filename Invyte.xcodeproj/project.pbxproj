@@ -38,6 +38,8 @@
 		D2BC12751DA603F4002142CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2BC12741DA603F4002142CE /* GoogleService-Info.plist */; };
 		D2CC83B31DB8468500A259BE /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CC83B21DB8468500A259BE /* CustomCell.xib */; };
 		D2CC83B51DB8471800A259BE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC83B41DB8471800A259BE /* CustomCell.swift */; };
+		D2CC83BB1DB88D8800A259BE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC83BA1DB88D8800A259BE /* EventCell.swift */; };
+		D2CC83BD1DB88DAC00A259BE /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CC83BC1DB88DAC00A259BE /* EventCell.xib */; };
 		ED6490B12F6905AFA7311FD4 /* Pods_InvyteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A20A10B7508BFB8A8450FCE /* Pods_InvyteTests.framework */; };
 		F590FACF9B64CFB685FDEFB6 /* Pods_Invyte.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD0B0DF424E307078FE5572 /* Pods_Invyte.framework */; };
 /* End PBXBuildFile section */
@@ -106,6 +108,8 @@
 		D2BC12741DA603F4002142CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2CC83B21DB8468500A259BE /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		D2CC83B41DB8471800A259BE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		D2CC83BA1DB88D8800A259BE /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCell.swift; path = ../EventCell.swift; sourceTree = "<group>"; };
+		D2CC83BC1DB88DAC00A259BE /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EventCell.xib; path = ../EventCell.xib; sourceTree = "<group>"; };
 		E465E73CD7D8ED21EC97862F /* Pods-InvyteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InvyteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InvyteUITests/Pods-InvyteUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +225,8 @@
 				D27F57181DB6227900212CCB /* UserCell.xib */,
 				D27F57101DB6015600212CCB /* User.swift */,
 				D22EA9A11DB73F0200923A5B /* Event.swift */,
+				D2CC83BA1DB88D8800A259BE /* EventCell.swift */,
+				D2CC83BC1DB88DAC00A259BE /* EventCell.xib */,
 			);
 			path = Invyte;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2CC83BD1DB88DAC00A259BE /* EventCell.xib in Resources */,
 				D27398301DA070A200480B4B /* LaunchScreen.storyboard in Resources */,
 				D245782B1DA2F9C10069B686 /* Game of Thrones.ttf in Resources */,
 				D2CC83B31DB8468500A259BE /* CustomCell.xib in Resources */,
@@ -530,6 +537,7 @@
 				D245781E1DA2CEFF0069B686 /* ShareAndRate.swift in Sources */,
 				D24578181DA2CEAC0069B686 /* CreateEvent.swift in Sources */,
 				D2BC12731DA5F85E002142CE /* CreateAccount.swift in Sources */,
+				D2CC83BB1DB88D8800A259BE /* EventCell.swift in Sources */,
 				D22EA9A21DB73F0200923A5B /* Event.swift in Sources */,
 				D24578201DA2CF0A0069B686 /* Help.swift in Sources */,
 				D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */,
