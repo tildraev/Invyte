@@ -132,8 +132,8 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
             self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: self.usernameResults[indexPath.row]).observeSingleEvent(of: FIRDataEventType.childAdded, with: { (thirdSnapshot) in
                 theirUID = thirdSnapshot.key
                 FriendSystem.system.sendRequestToUser(theirUID)
-                cell!.rightButton.setTitle("Request sent!", for: UIControlState.normal)
                 cell!.rightButton.isEnabled = false
+                cell!.rightButton.setTitle("Request sent!", for: UIControlState.disabled)
             })
         }
         
