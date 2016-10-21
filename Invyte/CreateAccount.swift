@@ -46,14 +46,6 @@ class CreateAccount : UIViewController {
                 {
                     // No user with that username. Continue.
                     //Create the user
-                    FriendSystem.system.createAccount(self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (success) in
-                        if success {
-                            
-                        }
-                        else{
-                            
-                        }
-                    })
                     FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                         if error == nil
                         {
@@ -70,7 +62,7 @@ class CreateAccount : UIViewController {
                 }
                 else
                 {
-                    self.presentAlertView(issue: "That username is already taken. Please try a different username.")                }
+                    self.presentAlertView(issue: "That username is already taken. Please try a different username.")}
                 }, withCancel: { (error) in
                     print(error)
             })

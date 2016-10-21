@@ -46,6 +46,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell!.rightButton.isEnabled = true
         cell!.rightButton.setTitle("Remove", for: UIControlState.normal)
         cell!.leftButton.isEnabled = false
+        cell!.alpha = 1
         cell!.leftButton.setTitle(FriendSystem.system.friendList[indexPath.row].username, for: UIControlState.disabled)
         
         cell!.setRightButtonAction {
