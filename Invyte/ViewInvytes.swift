@@ -14,6 +14,7 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
+        self.tableview.reloadData()
         super.viewDidLoad()
         tableview.delegate = self
         tableview.dataSource = self

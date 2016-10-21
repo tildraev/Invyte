@@ -33,7 +33,7 @@ class CreateEvent : UIViewController {
         if eventTitleTextField.text != "" && eventDescriptionTextField.text != ""
         {
             //Create the event reference in Firebase
-            let description = eventTitleTextField.text! + eventDescriptionTextField.text!
+            let description = eventTitleTextField.text! + " - " + eventDescriptionTextField.text!
             FriendSystem.system.CURRENT_USER_EVENTS_REF.child(FriendSystem.system.CURRENT_USER_ID).setValue(description)
             
             //Present the invite list

@@ -72,10 +72,10 @@ class FriendSystem {
         })
     }
     
-    func getEvent(_ userID: String, completion: @escaping (Event) -> Void) {
-        USER_REF.child(userID).observeSingleEvent(of: FIRDataEventType.value, with: { (eventSnapshot) in
-            let id = userID
-            let titleAndDescription = eventSnapshot.childSnapshot(forPath: "Events").childSnapshot(forPath: userID).value as! String
+    func getEvent(_ eventCreatorID: String, completion: @escaping (Event) -> Void) {
+        USER_REF.child(eventCreatorID).observeSingleEvent(of: FIRDataEventType.value, with: { (eventSnapshot) in
+            let id = eventCreatorID
+            let titleAndDescription = eventSnapshot.childSnapshot(forPath: "Events").childSnapshot(forPath: eventCreatorID).value as! String
             completion(Event(creatorID: id, eventTitleAndDescription: titleAndDescription))
         })
     }
@@ -203,13 +203,17 @@ class FriendSystem {
         }
     }
 
+    func addEventObserver(){
+        //code to add observer for events user has accepted.
+    }
+    
     func removeEventObserver(){
         CURRENT_USER_EVENTS_REF.removeAllObservers()
     }
     
     /** Sends an event request to the user with the specified id */
-    func sendRequestToUser(userID: String,_ event: Event) {
-        USER_REF.child(userID).child("Event Requests").child(event.titleAndDescription).setValue("true")
+    func sendEventRequestToUser(userID: String,_ event: Event) {
+        USER_REF.child(userID).child("Event Requests").child(event.creatorID).setValue(event.titleAndDescription)
     }
     
     /** Removes events from the specified user */
