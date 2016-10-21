@@ -56,20 +56,29 @@ class FriendSystem {
     /** Gets the current User object for the specified user id */
     func getCurrentUser(_ completion: @escaping (User) -> Void) {
         CURRENT_USER_REF.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let id = snapshot.key
-            completion(User(userEmail: email, userID: id))
+            completion(User(username: username, userEmail: email, userID: id))
         })
     }
     /** Gets the User object for the specified user id */
     func getUser(_ userID: String, completion: @escaping (User) -> Void) {
         USER_REF.child(userID).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let id = snapshot.key
-            completion(User(userEmail: email, userID: id))
+            completion(User(username: username, userEmail: email, userID: id))
         })
     }
     
+    func getEvent(_ eventCreatorID: String, completion: @escaping (Event) -> Void) {
+        USER_REF.child(eventCreatorID).observeSingleEvent(of: FIRDataEventType.value, with: { (eventSnapshot) in
+            let id = eventCreatorID
+            let titleAndDescription = eventSnapshot.childSnapshot(forPath: "Events").childSnapshot(forPath: eventCreatorID).value as! String
+            completion(Event(creatorID: id, eventTitleAndDescription: titleAndDescription))
+        })
+    }
     
     
     // MARK: - Account Related
@@ -156,9 +165,10 @@ class FriendSystem {
         FriendSystem.system.USER_REF.observe(FIRDataEventType.value, with: { (snapshot) in
             self.userList.removeAll()
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                let username = child.childSnapshot(forPath: "Username").value as! String
                 let email = child.childSnapshot(forPath: "Email").value as! String
                 if email != FIRAuth.auth()?.currentUser?.email! {
-                    self.userList.append(User(userEmail: email, userID: child.key))
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key))
                 }
             }
             update()
@@ -178,17 +188,23 @@ class FriendSystem {
             self.eventList.removeAll()
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 let id = child.key
-                self.eventList.append(Event(creatorID: id, eventTitleAndDescription: child.value as! String))
-                update()
-                
+                self.getEvent(id, completion: { (event) in
+                    self.eventList.append(event)
+                    update()
+                })
             }
-            // If there are no children, run completion here instead
-            if snapshot.childrenCount == 0 {
+            //If no children, run completion here instead
+            if snapshot.childrenCount == 0{
                 update()
             }
-        }) { (error) in
+            })
+        { (error) in
             print(error)
         }
+    }
+
+    func addEventObserver(){
+        //code to add observer for events user has accepted.
     }
     
     func removeEventObserver(){
@@ -196,8 +212,8 @@ class FriendSystem {
     }
     
     /** Sends an event request to the user with the specified id */
-    func sendRequestToUser(userID: String,_ event: Event) {
-        USER_REF.child(userID).child("Event Requests").child(event.titleAndDescription).setValue("true")
+    func sendEventRequestToUser(userID: String,_ event: Event) {
+        USER_REF.child(userID).child("Event Requests").child(event.creatorID).setValue(event.titleAndDescription)
     }
     
     /** Removes events from the specified user */
@@ -206,10 +222,15 @@ class FriendSystem {
         USER_REF.child(userID).child("Events").child(CURRENT_USER_ID).removeValue()
     }
     
-    /** Accepts an even from user with the specified ID */
-    func acceptEventRequest(_ userID: String, event: Event){
+    /** Removed the event request from the user */
+    func removeEventRequest(_ userID: String){
         CURRENT_USER_REF.child("Event Requests").child(userID).removeValue()
-        CURRENT_USER_REF.child("Events").child(userID).setValue(true)
+    }
+    
+    /** Accepts an even from user with the specified ID */
+    func acceptEventRequest(_ userID: String, titleAndDescription: String){
+        CURRENT_USER_REF.child("Event Requests").child(userID).removeValue()
+        CURRENT_USER_REF.child("Events").child(userID).setValue(titleAndDescription)
     }
     
     // MARK: - All friends

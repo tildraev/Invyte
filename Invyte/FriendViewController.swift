@@ -35,17 +35,20 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create cell
-        var cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
         if cell == nil {
-            tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
-            cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+            tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
         }
         
         // Modify cell
-        cell!.button.setTitle("Remove", for: UIControlState())
-        cell!.emailLabel.text = FriendSystem.system.friendList[(indexPath as NSIndexPath).row].email
+        cell!.label.alpha = 0
+        cell!.rightButton.isEnabled = true
+        cell!.rightButton.setTitle("Remove", for: UIControlState.normal)
+        cell!.leftButton.isEnabled = false
+        cell!.leftButton.setTitle(FriendSystem.system.friendList[indexPath.row].username, for: UIControlState.disabled)
         
-        cell!.setFunction {
+        cell!.setRightButtonAction {
             let id = FriendSystem.system.friendList[(indexPath as NSIndexPath).row].id
             FriendSystem.system.removeFriend(id!)
         }

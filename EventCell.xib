@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fm9-U3-6Z8" customClass="EventCell" customModule="Invyte" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fm9-U3-6Z8" id="cZm-k7-nBh">
+                <frame key="frameInset" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngD-hz-wpS">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjb-oF-Vob">
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="descriptionButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="kbf-Is-yeY"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-6I-WHX">
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="acceptButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="g2M-c2-e0J"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iK-Gx-zpk">
+                        <state key="normal" title="Button"/>
+                        <connections>
+                            <action selector="declineButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="7yd-3o-6Cd"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="cjb-oF-Vob" firstAttribute="leading" secondItem="ngD-hz-wpS" secondAttribute="trailing" constant="44" id="FEF-8i-3iR"/>
+                    <constraint firstItem="ngD-hz-wpS" firstAttribute="leading" secondItem="cZm-k7-nBh" secondAttribute="leadingMargin" id="Gxk-H5-Xje"/>
+                    <constraint firstItem="ngD-hz-wpS" firstAttribute="baseline" secondItem="8zU-6I-WHX" secondAttribute="baseline" id="I7x-7K-rfg"/>
+                    <constraint firstItem="8iK-Gx-zpk" firstAttribute="leading" secondItem="8zU-6I-WHX" secondAttribute="trailing" constant="64" id="MsB-ls-Y1p"/>
+                    <constraint firstItem="ngD-hz-wpS" firstAttribute="leading" secondItem="cZm-k7-nBh" secondAttribute="leadingMargin" id="OXk-Dl-ges"/>
+                    <constraint firstItem="cjb-oF-Vob" firstAttribute="centerY" secondItem="cZm-k7-nBh" secondAttribute="centerY" id="RjG-le-JDr"/>
+                    <constraint firstItem="8zU-6I-WHX" firstAttribute="leading" secondItem="cjb-oF-Vob" secondAttribute="trailing" constant="54" id="Wr3-YE-DN3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ngD-hz-wpS" secondAttribute="trailing" constant="317" id="aOA-i4-YVc"/>
+                    <constraint firstItem="ngD-hz-wpS" firstAttribute="centerY" secondItem="cjb-oF-Vob" secondAttribute="centerY" id="gcl-1f-ETg"/>
+                    <constraint firstItem="8zU-6I-WHX" firstAttribute="baseline" secondItem="8iK-Gx-zpk" secondAttribute="baseline" id="j4r-7U-cyw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="acceptButton" destination="8zU-6I-WHX" id="YFi-Xt-eHn"/>
+                <outlet property="declineButton" destination="8iK-Gx-zpk" id="83Z-Ky-DXA"/>
+                <outlet property="descriptionButton" destination="cjb-oF-Vob" id="W5p-NN-RQf"/>
+                <outlet property="label" destination="ngD-hz-wpS" id="2PN-To-EGI"/>
+            </connections>
+            <point key="canvasLocation" x="-249.5" y="7"/>
+        </tableViewCell>
+    </objects>
+</document>

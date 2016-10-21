@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Firebase
 
 class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,6 +22,13 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
         blurView.frame = self.backgroundImage.bounds
         backgroundImage.addSubview(blurView)
         self.view.backgroundColor = UIColor.black
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        FriendSystem.system.addFriendObserver {
+            self.tableView.reloadData()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,22 +41,33 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create cell
-        var cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
-        //        if cell == nil {
-        //            tableView.register(UINib(nibName: "UserInviteCell", bundle: nil), forCellReuseIdentifier: "UserInviteCell")
-        //            cell = tableView.dequeueReusableCell(withIdentifier: "UserInviteCell") as? UserInviteCell
-        //        }
-        //
-        //        // Modify cell
-        //        cell!.button.setTitle("Accept", for: UICo1ntrolState())
-        //        cell!.emailLabel.text = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].email
-        //
-        //        cell!.setFunction {
-        //            let id = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].id
-        //            FriendSystem.system.acceptFriendRequest(id!)
-        //        }
-        //
-        //        // Return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
+        if cell == nil {
+            tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
+        }
+        
+        // Modify cell
+        cell!.label.alpha = 0
+        cell!.leftButton.isEnabled = false
+        cell!.leftButton.setTitle(FriendSystem.system.friendList[indexPath.row].username, for: UIControlState.disabled)
+        cell!.rightButton.isEnabled = true
+        cell!.rightButton.setTitle("Invyte", for: UIControlState.normal)
+        
+        var title = ""
+        
+        FriendSystem.system.CURRENT_USER_REF.child("Events").child(FriendSystem.system.CURRENT_USER_ID).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+            title = snapshot.value as! String
+            
+            }, withCancel: { (error) in
+                print(error)
+        })
+        
+        cell!.setRightButtonAction {
+            FriendSystem.system.sendEventRequestToUser(userID: FriendSystem.system.friendList[indexPath.row].id, Event(creatorID: FriendSystem.system.CURRENT_USER_ID, eventTitleAndDescription: title))
+        }
+        
+        // Return cell
         return cell!
     }
     
@@ -56,6 +75,11 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBAction func doneButtonTapped(_ sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Reveal")
         self.present(vc!, animated: true, completion: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        FriendSystem.system.removeFriendObserver()
     }
     
 }
