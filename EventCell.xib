@@ -21,36 +21,49 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjb-oF-Vob">
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <action selector="descriptionButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="kbf-Is-yeY"/>
-                        </connections>
-                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-6I-WHX">
-                        <state key="normal" title="Button"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="CjR-BC-py3"/>
+                        </constraints>
+                        <state key="normal" title="Accept">
+                            <color key="titleColor" red="0.0" green="0.84469866069999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                         <connections>
                             <action selector="acceptButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="g2M-c2-e0J"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iK-Gx-zpk">
-                        <state key="normal" title="Button"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="7wV-wv-rnV"/>
+                        </constraints>
+                        <state key="normal" title="Decline">
+                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                         <connections>
                             <action selector="declineButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="7yd-3o-6Cd"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjb-oF-Vob">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="G8P-IZ-bKx"/>
+                        </constraints>
+                        <state key="normal" title="Details"/>
+                        <connections>
+                            <action selector="descriptionButtonTapped:" destination="Fm9-U3-6Z8" eventType="touchUpInside" id="kbf-Is-yeY"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="cjb-oF-Vob" firstAttribute="leading" secondItem="ngD-hz-wpS" secondAttribute="trailing" constant="44" id="FEF-8i-3iR"/>
-                    <constraint firstItem="ngD-hz-wpS" firstAttribute="leading" secondItem="cZm-k7-nBh" secondAttribute="leadingMargin" id="Gxk-H5-Xje"/>
-                    <constraint firstItem="ngD-hz-wpS" firstAttribute="baseline" secondItem="8zU-6I-WHX" secondAttribute="baseline" id="I7x-7K-rfg"/>
-                    <constraint firstItem="8iK-Gx-zpk" firstAttribute="leading" secondItem="8zU-6I-WHX" secondAttribute="trailing" constant="64" id="MsB-ls-Y1p"/>
-                    <constraint firstItem="ngD-hz-wpS" firstAttribute="leading" secondItem="cZm-k7-nBh" secondAttribute="leadingMargin" id="OXk-Dl-ges"/>
-                    <constraint firstItem="cjb-oF-Vob" firstAttribute="centerY" secondItem="cZm-k7-nBh" secondAttribute="centerY" id="RjG-le-JDr"/>
-                    <constraint firstItem="8zU-6I-WHX" firstAttribute="leading" secondItem="cjb-oF-Vob" secondAttribute="trailing" constant="54" id="Wr3-YE-DN3"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ngD-hz-wpS" secondAttribute="trailing" constant="317" id="aOA-i4-YVc"/>
-                    <constraint firstItem="ngD-hz-wpS" firstAttribute="centerY" secondItem="cjb-oF-Vob" secondAttribute="centerY" id="gcl-1f-ETg"/>
-                    <constraint firstItem="8zU-6I-WHX" firstAttribute="baseline" secondItem="8iK-Gx-zpk" secondAttribute="baseline" id="j4r-7U-cyw"/>
+                    <constraint firstItem="cjb-oF-Vob" firstAttribute="leading" secondItem="ngD-hz-wpS" secondAttribute="trailing" constant="3" id="1eC-4a-JTM"/>
+                    <constraint firstItem="ngD-hz-wpS" firstAttribute="leading" secondItem="cZm-k7-nBh" secondAttribute="leadingMargin" id="G7u-qe-vdQ"/>
+                    <constraint firstItem="cjb-oF-Vob" firstAttribute="top" secondItem="cZm-k7-nBh" secondAttribute="topMargin" id="J5f-7a-fsK"/>
+                    <constraint firstItem="8zU-6I-WHX" firstAttribute="leading" secondItem="cjb-oF-Vob" secondAttribute="trailing" constant="8" symbolic="YES" id="NYA-Y6-Xls"/>
+                    <constraint firstItem="cjb-oF-Vob" firstAttribute="baseline" secondItem="8zU-6I-WHX" secondAttribute="baseline" id="R9O-HX-veU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="8iK-Gx-zpk" secondAttribute="trailing" constant="-6" id="bTe-n4-jHz"/>
+                    <constraint firstItem="cjb-oF-Vob" firstAttribute="leading" secondItem="ngD-hz-wpS" secondAttribute="trailing" constant="3" id="ob0-IX-cgv"/>
+                    <constraint firstItem="8zU-6I-WHX" firstAttribute="baseline" secondItem="8iK-Gx-zpk" secondAttribute="baseline" id="sFt-AY-izn"/>
+                    <constraint firstItem="8iK-Gx-zpk" firstAttribute="leading" secondItem="8zU-6I-WHX" secondAttribute="trailing" constant="9" id="sGX-eD-Zej"/>
+                    <constraint firstItem="ngD-hz-wpS" firstAttribute="centerY" secondItem="cZm-k7-nBh" secondAttribute="centerY" id="x8L-Lq-3n5"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

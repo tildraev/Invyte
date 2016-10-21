@@ -77,6 +77,6 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        FriendSystem.system.removeEventObserver()
+        FriendSystem.system.removeEventRequestObserver()
     }
 }
