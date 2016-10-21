@@ -39,55 +39,6 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     
     @IBAction func searchButtonTapped(_ sender: AnyObject)
     {
-        //THIS CODE ALL WORKS TO ESTABLISH A FRIENDSHIP BETWEEN THE USER AND THE USERNAME TYPED INTO THE SEARCH BAR. 
-        //IT DOES NOT ALLOW SEARCH RESULTS TO BE DISPLAYED.
-        //DO NOT DELETE
-//        var usernameEntered = ""
-//        if(self.searchBarTextField.text != "")
-//        {
-//            usernameEntered = self.searchBarTextField.text!
-//            
-//            self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: usernameEntered).observeSingleEvent(of: .value, with: { (snapshot) in
-//                
-//                if(snapshot.value is NSNull)
-//                {
-//                    // No user
-//                    print("a user with that username does not exist")
-//                }
-//                    
-//                else
-//                {
-//                    //User exists! Add user to friends list.
-//                    
-//                    let myUID = FIRAuth.auth()?.currentUser?.uid
-//                    var theirUID = ""
-//                    
-//
-//                    //Get the current count of friends
-//                    self.ref.child("users").child(myUID!).child("friendCount").observeSingleEvent(of: FIRDataEventType.value, with: { (secondSnapshot) in
-//                        let friendCount = secondSnapshot.value! as! Int
-//                        let newFriendCount = friendCount + 1
-//                        
-//                        //Set the new number of friends
-//                        self.ref.child("users").child(myUID!).child("friendCount").setValue(newFriendCount)
-//                        
-//                        //Get the friend's UID
-//                        self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: usernameEntered).observeSingleEvent(of: FIRDataEventType.childAdded, with: { (thirdSnapshot) in
-//                            theirUID = thirdSnapshot.key
-//                            
-//                            //Establish the friendship (at the moment, a one-way friendship)
-//                            self.ref.child("users").child(myUID!).child("Friends").child(String(newFriendCount)).setValue(theirUID)
-//                        })
-//                        
-//                        
-//                    })
-//                }
-//                
-//                }, withCancel: { (error) in
-//                    print(error)
-//            })
-//            
-//        }
         usernameResults.removeAll()
         count = 0
         tableView.reloadData()
@@ -161,26 +112,29 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
         
         if cell == nil
         {
-            tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
-            cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+            tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
         }
         
-        cell!.emailLabel.text = usernameResults[indexPath.row]
-        cell!.button.setTitle("Add", for: UIControlState.normal)
-        cell!.button.isEnabled = true
+        cell!.label.alpha = 0
+        cell?.leftButton.isEnabled = false
+        cell!.leftButton.setTitle(usernameResults[indexPath.row], for: UIControlState.disabled)
         
-        cell!.setFunction {
+        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
+        cell!.rightButton.isEnabled = true
+        
+        cell!.setRightButtonAction {
             var theirUID = ""
             self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: self.usernameResults[indexPath.row]).observeSingleEvent(of: FIRDataEventType.childAdded, with: { (thirdSnapshot) in
                 theirUID = thirdSnapshot.key
-            FriendSystem.system.sendRequestToUser(theirUID)
-                cell!.button.setTitle("Request sent!", for: UIControlState.normal)
-                cell!.button.isEnabled = false
-        })
+                FriendSystem.system.sendRequestToUser(theirUID)
+                cell!.rightButton.setTitle("Request sent!", for: UIControlState.normal)
+                cell!.rightButton.isEnabled = false
+            })
         }
         
         return cell!
