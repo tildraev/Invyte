@@ -22,6 +22,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.backgroundImage.bounds

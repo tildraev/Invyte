@@ -17,6 +17,7 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.backgroundImage.bounds
@@ -65,6 +66,8 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         cell!.setRightButtonAction {
             FriendSystem.system.sendEventRequestToUser(userID: FriendSystem.system.friendList[indexPath.row].id, Event(creatorID: FriendSystem.system.CURRENT_USER_ID, eventTitleAndDescription: title))
+            cell!.rightButton.isEnabled = false
+            cell!.rightButton.setTitle("Invyted", for: UIControlState.disabled)
         }
         
         // Return cell

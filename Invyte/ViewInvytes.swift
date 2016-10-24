@@ -16,6 +16,7 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
     override func viewDidLoad() {
         self.tableview.reloadData()
         super.viewDidLoad()
+        self.tableview.tableFooterView = UIView()
         tableview.delegate = self
         tableview.dataSource = self
         FriendSystem.system.addEventRequestObserver {
@@ -51,7 +52,10 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
 
         
         cell!.setDescriptionButtonAction {
-            self.presentAlertView(description: FriendSystem.system.eventList[indexPath.row].titleAndDescription)
+            let descriptionToAlert = FriendSystem.system.eventList[indexPath.row].titleAndDescription
+            FriendSystem.system.getUser(FriendSystem.system.eventList[indexPath.row].creatorID!, completion: { (user) in
+                self.presentAlertView(description: descriptionToAlert!, title: user.username!.capitalized + " invytes you to:")
+            })
         }
         
         cell!.setAcceptButtonAction {
@@ -68,8 +72,8 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
         return cell!
     }
     
-    func presentAlertView(description: String) {
-        let alertController = UIAlertController(title: nil, message: description, preferredStyle: .alert)
+    func presentAlertView(description: String, title: String) {
+        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)

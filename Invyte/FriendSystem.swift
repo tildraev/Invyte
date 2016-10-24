@@ -69,6 +69,8 @@ class FriendSystem {
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let id = snapshot.key
             completion(User(username: username, userEmail: email, userID: id))
+            }, withCancel: { (error) in
+                print(error.localizedDescription)
         })
     }
     
@@ -243,8 +245,9 @@ class FriendSystem {
     }
     
     /** Removes events from the specified user */
-    func removeEvent(_ userID: String) {
+    func removeEvent(_ userID: String, whichPosition: Int) {
         CURRENT_USER_REF.child("Events").child(userID).removeValue()
+        eventsAcceptedList.remove(at: whichPosition)
     }
     
     /** Removed the event request from the user */

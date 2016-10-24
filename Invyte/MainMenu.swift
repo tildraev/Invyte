@@ -19,6 +19,8 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tableView.tableFooterView = UIView()
+        
         let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.backgroundImage.bounds
@@ -56,6 +58,7 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? EventCell
+        let creatorID = FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID
         if cell == nil {
             tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
             cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? EventCell
@@ -64,9 +67,13 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Modify cell
         cell!.label.text = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
         
-        
         cell!.setDescriptionButtonAction {
-            self.presentAlertView(description: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
+            let descriptionToAlert = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
+            FriendSystem.system.getUser(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID!, completion: { (user) in
+                //descriptionToAlert?.append("\n" + " Event by " + user.username)
+                self.presentAlertView(description: descriptionToAlert!, title: user.username!.capitalized + " invytes you to:")
+            })
+        
         }
         
         cell!.acceptButton.isEnabled = false
@@ -77,20 +84,19 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         cell!.declineButton.setTitle("Remove", for: UIControlState.normal)
         cell!.setDeclineButtonAction {
-            FriendSystem.system.removeEvent(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID)
-            print(FriendSystem.system.eventsAcceptedList.count)
-//            cell!.label.text = "Removed"
-//            cell!.label.textColor = UIColor.lightGray
-            self.viewWillDisappear(false)
-            self.viewDidLoad()
+            cell!.declineButton.isEnabled = false
+            cell!.declineButton.setTitle("Removed", for: UIControlState.disabled)
+            FriendSystem.system.removeEvent(creatorID!, whichPosition: indexPath.row)
         }
+        
+        
         
         // Return cell
         return cell!
     }
     
-    func presentAlertView(description: String) {
-        let alertController = UIAlertController(title: nil, message: description, preferredStyle: .alert)
+    func presentAlertView(description: String, title: String) {
+        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)
