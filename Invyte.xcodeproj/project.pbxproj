@@ -336,6 +336,7 @@
 				TargetAttributes = {
 					D27398211DA070A200480B4B = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 9V3Q6X8V58;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
@@ -706,6 +707,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 9V3Q6X8V58;
 				INFOPLIST_FILE = Invyte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.Invyte;
@@ -722,6 +724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 9V3Q6X8V58;
 				INFOPLIST_FILE = Invyte/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = MoPfisterGoods.Invyte;

@@ -182,6 +182,18 @@ class FriendSystem {
             }
             update()
         })
+        
+        FriendSystem.system.USER_REF.observe(FIRDataEventType.childRemoved, with: { (snapshot) in
+            self.userList.removeAll()
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                let username = child.childSnapshot(forPath: "Username").value as! String
+                let email = child.childSnapshot(forPath: "Email").value as! String
+                if email != FIRAuth.auth()?.currentUser?.email! {
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key))
+                }
+            }
+            update()
+        })
     }
     /** Removes the user observer. This should be done when leaving the view that uses the observer. */
     func removeUserObserver() {
@@ -198,6 +210,8 @@ class FriendSystem {
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 let id = child.key
                 self.getEvent(id, completion: { (event) in
+                //self.getEventsAccepted(id, completion: { (event) in
+                    //self.eventsAcceptedList.append(event)
                     self.eventList.append(event)
                     update()
                 })
@@ -226,6 +240,7 @@ class FriendSystem {
                 self.getEventsAccepted(child.key, completion: { (event) in
                     self.eventsAcceptedList.append(event)
                     update()
+                    print(child.key)
                 })
             }
             if snapshot.childrenCount == 0 {
@@ -233,6 +248,21 @@ class FriendSystem {
             }
             }) { (error) in
                 print(error)}
+        
+        CURRENT_USER_EVENTS_REF.observe(FIRDataEventType.childRemoved, with: { (snapshot) in
+            self.eventsAcceptedList.removeAll()
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                self.getEventsAccepted(child.key, completion: { (event) in
+                    self.eventsAcceptedList.append(event)
+                    update()
+                })
+            }
+            if snapshot.childrenCount == 0 {
+                update()
+            }
+        }) { (error) in
+            print(error)}
+
     }
     
     func removeEventObserver(){
@@ -245,9 +275,8 @@ class FriendSystem {
     }
     
     /** Removes events from the specified user */
-    func removeEvent(_ userID: String, whichPosition: Int) {
+    func removeEvent(_ userID: String) {
         CURRENT_USER_REF.child("Events").child(userID).removeValue()
-        eventsAcceptedList.remove(at: whichPosition)
     }
     
     /** Removed the event request from the user */
@@ -268,6 +297,21 @@ class FriendSystem {
      to update your UI. */
     func addFriendObserver(_ update: @escaping () -> Void) {
         CURRENT_USER_FRIENDS_REF.observe(FIRDataEventType.value, with: { (snapshot) in
+            self.friendList.removeAll()
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                let id = child.key
+                self.getUser(id, completion: { (user) in
+                    self.friendList.append(user)
+                    update()
+                })
+            }
+            // If there are no children, run completion here instead
+            if snapshot.childrenCount == 0 {
+                update()
+            }
+        })
+        
+        CURRENT_USER_FRIENDS_REF.observe(FIRDataEventType.childRemoved, with: { (snapshot) in
             self.friendList.removeAll()
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 let id = child.key

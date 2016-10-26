@@ -125,8 +125,8 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         cell?.leftButton.isEnabled = false
         cell!.leftButton.setTitle(usernameResults[indexPath.row], for: UIControlState.disabled)
         
-        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
-        cell!.rightButton.isEnabled = true
+//        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
+//        cell!.rightButton.isEnabled = true
         
         cell!.setRightButtonAction {
             var theirUID = ""
@@ -142,6 +142,10 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        FriendSystem.system.removeUserObserver()
+    }
 }
 
 

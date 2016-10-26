@@ -14,18 +14,31 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var loggedInAsLabel: UILabel!
+    
+    
     var ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        FriendSystem.system.addEventObserver {
+            self.tableView.reloadData()
+        }
         
+        makeItLookPretty()
+        
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+
+    func makeItLookPretty()
+    {
         let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.backgroundImage.bounds
         backgroundImage.addSubview(blurView)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         if let user = FIRAuth.auth()?.currentUser{
@@ -34,12 +47,6 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         else{
             loggedInAsLabel.text = "Not logged in"
-        }
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        FriendSystem.system.addEventObserver {
-            self.tableView.reloadData()
         }
     }
     
@@ -52,17 +59,20 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return FriendSystem.system.eventsAcceptedList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? EventCell
-        let creatorID = FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID
+
         if cell == nil {
             tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
             cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? EventCell
         }
+        
+        let creatorID = FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID
         
         // Modify cell
         cell!.label.text = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
@@ -70,28 +80,22 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell!.setDescriptionButtonAction {
             let descriptionToAlert = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
             FriendSystem.system.getUser(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID!, completion: { (user) in
-                //descriptionToAlert?.append("\n" + " Event by " + user.username)
                 self.presentAlertView(description: descriptionToAlert!, title: user.username!.capitalized + " invytes you to:")
             })
-        
         }
         
         cell!.acceptButton.isEnabled = false
         cell!.acceptButton.alpha = 0
         cell!.setAcceptButtonAction {
-            FriendSystem.system.acceptEventRequest(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID, titleAndDescription: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
+            //FriendSystem.system.acceptEventRequest(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID, titleAndDescription: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
+            //Do nothing
         }
         
         cell!.declineButton.setTitle("Remove", for: UIControlState.normal)
         cell!.setDeclineButtonAction {
-            cell!.declineButton.isEnabled = false
-            cell!.declineButton.setTitle("Removed", for: UIControlState.disabled)
-            FriendSystem.system.removeEvent(creatorID!, whichPosition: indexPath.row)
+            FriendSystem.system.removeEvent(creatorID!)
         }
         
-        
-        
-        // Return cell
         return cell!
     }
     
