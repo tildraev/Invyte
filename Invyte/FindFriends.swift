@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate{
+class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var searchBarTextField: UITextField!
@@ -43,6 +43,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         usernameResults.removeAll()
         count = 0
         tableView.reloadData()
+        searchBarTextField.resignFirstResponder()
         getResults()
     }
     
@@ -145,6 +146,11 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         FriendSystem.system.removeUserObserver()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchBarTextField.resignFirstResponder()
+        return true
     }
 }
 
