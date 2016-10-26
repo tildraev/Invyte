@@ -15,7 +15,7 @@ class RequestViewController: UIViewController, UITableViewDataSource, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
         

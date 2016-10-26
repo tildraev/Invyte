@@ -25,7 +25,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJm-RT-yvg">
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Add"/>
                         <connections>
                             <action selector="rightButtonTapped:" destination="xTN-cH-f8Y" eventType="touchUpInside" id="Yeg-Ls-07Z"/>
                         </connections>
@@ -52,7 +52,7 @@
                 <outlet property="leftButton" destination="0WA-fw-Elv" id="a1X-g2-eD7"/>
                 <outlet property="rightButton" destination="ZJm-RT-yvg" id="Oej-Rj-sSz"/>
             </connections>
-            <point key="canvasLocation" x="-189.5" y="-70"/>
+            <point key="canvasLocation" x="-191" y="-66"/>
         </tableViewCell>
     </objects>
 </document>

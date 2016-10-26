@@ -14,16 +14,31 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var loggedInAsLabel: UILabel!
+    
+    
     var ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        FriendSystem.system.addEventObserver {
+            self.tableView.reloadData()
+        }
         
+        makeItLookPretty()
+        
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+
+    func makeItLookPretty()
+    {
         let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.backgroundImage.bounds
         backgroundImage.addSubview(blurView)
-        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         if let user = FIRAuth.auth()?.currentUser{
@@ -32,12 +47,6 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         else{
             loggedInAsLabel.text = "Not logged in"
-        }
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        FriendSystem.system.addEventObserver {
-            self.tableView.reloadData()
         }
     }
     
@@ -50,47 +59,48 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return FriendSystem.system.eventsAcceptedList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create cell
         var cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? EventCell
+
         if cell == nil {
             tableView.register(UINib(nibName: "EventCell", bundle: nil), forCellReuseIdentifier: "EventCell")
             cell = tableView.dequeueReusableCell(withIdentifier: "EventCell") as? EventCell
         }
         
+        let creatorID = FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID
+        
         // Modify cell
         cell!.label.text = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
         
-        
         cell!.setDescriptionButtonAction {
-            self.presentAlertView(description: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
+            let descriptionToAlert = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
+            FriendSystem.system.getUser(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID!, completion: { (user) in
+                self.presentAlertView(description: descriptionToAlert!, title: user.username!.capitalized + " invytes you to:")
+            })
         }
         
         cell!.acceptButton.isEnabled = false
         cell!.acceptButton.alpha = 0
         cell!.setAcceptButtonAction {
-            FriendSystem.system.acceptEventRequest(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID, titleAndDescription: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
+            //FriendSystem.system.acceptEventRequest(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID, titleAndDescription: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
+            //Do nothing
         }
         
         cell!.declineButton.setTitle("Remove", for: UIControlState.normal)
         cell!.setDeclineButtonAction {
-            FriendSystem.system.removeEvent(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID)
-            print(FriendSystem.system.eventsAcceptedList.count)
-//            cell!.label.text = "Removed"
-//            cell!.label.textColor = UIColor.lightGray
-            self.viewWillDisappear(false)
-            self.viewDidLoad()
+            FriendSystem.system.removeEvent(creatorID!)
         }
         
-        // Return cell
         return cell!
     }
     
-    func presentAlertView(description: String) {
-        let alertController = UIAlertController(title: nil, message: description, preferredStyle: .alert)
+    func presentAlertView(description: String, title: String) {
+        let alertController = UIAlertController(title: title, message: description, preferredStyle: .alert)
         let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)

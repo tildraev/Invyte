@@ -22,6 +22,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.backgroundImage.bounds
@@ -124,8 +125,8 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         cell?.leftButton.isEnabled = false
         cell!.leftButton.setTitle(usernameResults[indexPath.row], for: UIControlState.disabled)
         
-        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
-        cell!.rightButton.isEnabled = true
+//        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
+//        cell!.rightButton.isEnabled = true
         
         cell!.setRightButtonAction {
             var theirUID = ""
@@ -141,6 +142,10 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
 
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        FriendSystem.system.removeUserObserver()
+    }
 }
 
 

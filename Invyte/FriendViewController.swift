@@ -15,6 +15,7 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView()
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -58,4 +59,8 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell!
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        FriendSystem.system.removeFriendObserver()
+    }
 }
