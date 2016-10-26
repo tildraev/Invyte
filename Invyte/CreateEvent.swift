@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CreateEvent : UIViewController {
+class CreateEvent : UIViewController, UITextViewDelegate{
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var eventTitleTextField: UITextView!
     @IBOutlet weak var eventDescriptionTextField: UITextView!
@@ -52,4 +52,18 @@ class CreateEvent : UIViewController {
         alertController.addAction(defaultAction)
         present(alertController, animated: true, completion: nil)
     }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool
+    {
+        if(text == "\n")
+        {
+            view.endEditing(true)
+            return false
+        }
+        else
+        {
+            return true
+        }
+    }
+    
 }

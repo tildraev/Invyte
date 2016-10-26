@@ -9,7 +9,7 @@
 import Foundation
 import Firebase
 
-class LoginScreen: UIViewController {
+class LoginScreen: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var backgroundImage: UIImageView!
     
@@ -98,6 +98,10 @@ class LoginScreen: UIViewController {
         present(prompt, animated: true, completion: nil);
     }
 
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        return true
+    }
     
 }
