@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,19 +13,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTN-cH-f8Y" id="GJE-PL-1X8">
-                <frame key="frameInset" width="375" height="43"/>
+                <frame key="frameInset" width="375" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-fw-Elv">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="80" id="r0s-qk-mgl"/>
-                        </constraints>
                         <state key="normal" title="Button"/>
                         <connections>
                             <action selector="leftButtonTapped:" destination="xTN-cH-f8Y" eventType="touchUpInside" id="Mly-6b-0gy"/>
                         </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJm-RT-yvg">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJm-RT-yvg">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="130" id="MAq-lC-KtJ"/>
+                        </constraints>
                         <state key="normal" title="Add"/>
                         <connections>
                             <action selector="rightButtonTapped:" destination="xTN-cH-f8Y" eventType="touchUpInside" id="Yeg-Ls-07Z"/>
@@ -37,14 +38,14 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0WA-fw-Elv" firstAttribute="baseline" secondItem="TVQ-hp-jgr" secondAttribute="baseline" id="Bek-Wg-vhH"/>
-                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="centerX" secondItem="GJE-PL-1X8" secondAttribute="centerX" id="DbK-o8-zjS"/>
-                    <constraint firstAttribute="trailing" secondItem="ZJm-RT-yvg" secondAttribute="trailing" id="Dxe-Mu-LWt"/>
-                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="baseline" secondItem="ZJm-RT-yvg" secondAttribute="baseline" id="I68-oC-qG9"/>
-                    <constraint firstItem="ZJm-RT-yvg" firstAttribute="leading" secondItem="TVQ-hp-jgr" secondAttribute="trailing" constant="8" symbolic="YES" id="KdC-Y0-YsC"/>
-                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="leading" secondItem="0WA-fw-Elv" secondAttribute="trailing" constant="8" symbolic="YES" id="KoM-E2-IcI"/>
-                    <constraint firstItem="0WA-fw-Elv" firstAttribute="leading" secondItem="GJE-PL-1X8" secondAttribute="leading" id="Tp1-7n-daD"/>
-                    <constraint firstItem="0WA-fw-Elv" firstAttribute="centerY" secondItem="GJE-PL-1X8" secondAttribute="centerY" id="WFr-xf-2dv"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="centerY" secondItem="TVQ-hp-jgr" secondAttribute="centerY" id="3T8-WK-PU4"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="centerY" secondItem="GJE-PL-1X8" secondAttribute="centerY" id="Dnm-Kh-wQj"/>
+                    <constraint firstAttribute="trailing" secondItem="ZJm-RT-yvg" secondAttribute="trailing" constant="5" id="GXZ-Yh-NGL"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="baseline" secondItem="ZJm-RT-yvg" secondAttribute="baseline" id="Lk5-Zl-tGm"/>
+                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="leading" secondItem="0WA-fw-Elv" secondAttribute="trailing" constant="8" symbolic="YES" id="ZqO-cs-TtX"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="leading" secondItem="GJE-PL-1X8" secondAttribute="leading" id="dW7-Fc-iqB"/>
+                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="centerX" secondItem="GJE-PL-1X8" secondAttribute="centerX" id="jRF-4h-QVu"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="TVQ-hp-jgr" secondAttribute="trailing" constant="80" id="zxZ-mB-diR"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -52,7 +53,7 @@
                 <outlet property="leftButton" destination="0WA-fw-Elv" id="a1X-g2-eD7"/>
                 <outlet property="rightButton" destination="ZJm-RT-yvg" id="Oej-Rj-sSz"/>
             </connections>
-            <point key="canvasLocation" x="-191" y="-66"/>
+            <point key="canvasLocation" x="-191.5" y="-66"/>
         </tableViewCell>
     </objects>
 </document>

@@ -15,6 +15,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     @IBOutlet weak var searchBarTextField: UITextField!
     var count = 0
     var usernameResults = [String]()
+    var addClicked = false
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,18 +34,22 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         tableView.delegate = self
         tableView.dataSource = self
         
-        FriendSystem.system.addUserObserver { () in
-            self.tableView.reloadData()
+        if(addClicked){
+            FriendSystem.system.addUserObserver { () in
+                self.tableView.reloadData()
+                self.addClicked = false
+            }
         }
     }
     
     @IBAction func searchButtonTapped(_ sender: AnyObject)
     {
+        self.addClicked = false
         usernameResults.removeAll()
         count = 0
-        tableView.reloadData()
         searchBarTextField.resignFirstResponder()
         getResults()
+        
     }
     
     func getResults()
@@ -59,6 +64,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
             
             //If the username exists.
             self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: usernameEntered).observe(.value, with: { (snapshot) in
+                if(self.addClicked == false){
                     if(snapshot.value is NSNull)
                     {
                         //No users with that username
@@ -74,15 +80,19 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
                                 self.usernameResults.append(result)
                             }
                             self.count = snapDict.count
+                            
                         }
                         self.tableView.reloadData()
                     }
+                }
                 }, withCancel: { (error) in
                     print(error)
-            })
-            
+                })
+                
             //If the name exists
+            
             self.ref.child("users").queryOrdered(byChild: "Name").queryEqual(toValue: usernameEntered.lowercased()).observe(.value, with: { (secondSnapshot) in
+                if(self.addClicked == false){
                     if(secondSnapshot.value is NSNull)
                     {
                         //No users with that full name
@@ -96,13 +106,14 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
                                 self.usernameResults.append(result)
                             }
                             self.count = snapDict.count
+                            
                         }
                         self.tableView.reloadData()
                     }
                 }
+                }
             )
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -124,10 +135,11 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         
         cell!.label.alpha = 0
         cell?.leftButton.isEnabled = false
+        cell?.leftButton.setTitleColor(UIColor.black, for: UIControlState.disabled)
         cell!.leftButton.setTitle(usernameResults[indexPath.row], for: UIControlState.disabled)
         
-//        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
-//        cell!.rightButton.isEnabled = true
+        cell!.rightButton.setTitle("Add", for: UIControlState.normal)
+        cell!.rightButton.isEnabled = true
         
         cell!.setRightButtonAction {
             var theirUID = ""
@@ -136,6 +148,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
                 FriendSystem.system.sendRequestToUser(theirUID)
                 cell!.rightButton.isEnabled = false
                 cell!.rightButton.setTitle("Request sent!", for: UIControlState.disabled)
+                self.addClicked = true
             })
         }
         
