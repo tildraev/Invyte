@@ -8,18 +8,26 @@
 
 import Foundation
 import Firebase
+import UserNotifications
 
 class LoginScreen: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var backgroundImage: UIImageView!
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    let myKeychainWrapper = KeychainWrapper()
+    let createLoginButtonTag = 0
+    let loginButtonTag = 1
     
     var ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let storedUsername = UserDefaults.standard.value(forKey: "username") as? String {
+            emailTextField.text = storedUsername as String
+        }
         
         // Do any additional setup after loading the view, typically from a nib
         self.view.backgroundColor = UIColor.black
@@ -49,8 +57,21 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
             FIRAuth.auth()?.signIn(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                 if error == nil
                 {
-                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "Reveal")
-                    self.present(vc!, animated: true, completion: nil)
+                    //Keychain stuff
+                    //Do keychain stuff here
+                    //if (hasLoginKey == false) {
+                        UserDefaults.standard.setValue(self.emailTextField.text, forKey: "username")
+                    //}
+                    
+                    self.myKeychainWrapper.mySetObject(self.passwordTextField.text, forKey: kSecValueData)
+                    self.myKeychainWrapper.writeToKeychain()
+                    UserDefaults.standard.set(true, forKey: "hasLoginKey")
+                    UserDefaults.standard.synchronize()
+                    
+                    if self.checkLogin(username: self.emailTextField.text!, password: self.passwordTextField.text!){
+                        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Reveal")
+                        self.present(vc!, animated: true, completion: nil)
+                    }
                 }
                 else
                 {
@@ -102,6 +123,16 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return true
+    }
+    
+    
+    func checkLogin(username: String, password: String ) -> Bool {
+        if password == myKeychainWrapper.myObject(forKey: "v_Data") as? String &&
+            username == UserDefaults.standard.value(forKey: "username") as? String {
+            return true
+        } else {
+            return false
+        }
     }
     
 }

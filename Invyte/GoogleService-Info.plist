@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1043335707853-h4nlkih388rd71f1id30ou93pur6k9c5.apps.googleusercontent.com</string>
+	<string>722414158776-o3fhjga3i5g2mqg1rvuh411dpu9cpur3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1043335707853-h4nlkih388rd71f1id30ou93pur6k9c5</string>
+	<string>com.googleusercontent.apps.722414158776-o3fhjga3i5g2mqg1rvuh411dpu9cpur3</string>
 	<key>API_KEY</key>
-	<string>AIzaSyD5oDhUaWkERRN63NjpYtX4xEGd-lSkLWE</string>
+	<string>AIzaSyA00igJTHc5aaoWJLwVrS6MwSD-Bxc_4Xc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1043335707853</string>
+	<string>722414158776</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.MoPfisterGoods.Invyte</string>
 	<key>PROJECT_ID</key>
-	<string>invyte-9784f</string>
+	<string>invytes</string>
 	<key>STORAGE_BUCKET</key>
-	<string>invyte-9784f.appspot.com</string>
+	<string>invytes.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1043335707853:ios:6f2e977392fdc9b7</string>
+	<string>1:722414158776:ios:843c94d0f9e04196</string>
 	<key>DATABASE_URL</key>
-	<string>https://invyte-9784f.firebaseio.com</string>
+	<string>https://invytes.firebaseio.com</string>
 </dict>
 </plist>

@@ -51,8 +51,19 @@ class FriendViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell!.leftButton.setTitle(FriendSystem.system.friendList[indexPath.row].username, for: UIControlState.disabled)
         
         cell!.setRightButtonAction {
-            let id = FriendSystem.system.friendList[(indexPath as NSIndexPath).row].id
-            FriendSystem.system.removeFriend(id!)
+            let refreshAlert = UIAlertController(title: "Remove Friend", message: "Are you sure you want to remove " + FriendSystem.system.friendList[(indexPath.row)].username + "?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            refreshAlert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { (action: UIAlertAction!) in
+                let id = FriendSystem.system.friendList[(indexPath as NSIndexPath).row].id
+                FriendSystem.system.removeFriend(id!)
+            }))
+            
+            refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+                //Do nothing
+            }))
+            
+            self.present(refreshAlert, animated: true, completion: nil)
+            
         }
         
         // Return cell

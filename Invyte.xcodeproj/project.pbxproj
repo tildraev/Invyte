@@ -11,6 +11,7 @@
 		D20893591DA4C22A0054AB34 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20893581DA4C22A0054AB34 /* MainMenu.swift */; };
 		D22EA9A21DB73F0200923A5B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22EA9A11DB73F0200923A5B /* Event.swift */; };
 		D22EA9A41DB73F7C00923A5B /* InviteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22EA9A31DB73F7C00923A5B /* InviteList.swift */; };
+		D2443FA31DC270A500291032 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2443FA21DC270A500291032 /* GoogleService-Info.plist */; };
 		D24578181DA2CEAC0069B686 /* CreateEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578171DA2CEAC0069B686 /* CreateEvent.swift */; };
 		D245781A1DA2CEC20069B686 /* FindFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24578191DA2CEC20069B686 /* FindFriends.swift */; };
 		D245781C1DA2CEDC0069B686 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D245781B1DA2CEDC0069B686 /* UserInfo.swift */; };
@@ -34,8 +35,8 @@
 		D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57141DB603FF00212CCB /* RequestViewController.swift */; };
 		D27F57171DB604ED00212CCB /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57161DB604ED00212CCB /* FriendViewController.swift */; };
 		D27F57191DB6227900212CCB /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27F57181DB6227900212CCB /* UserCell.xib */; };
+		D2B7AC3A1DC927FC00072961 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B7AC391DC927FC00072961 /* KeychainWrapper.m */; };
 		D2BC12731DA5F85E002142CE /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC12721DA5F85E002142CE /* CreateAccount.swift */; };
-		D2BC12751DA603F4002142CE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2BC12741DA603F4002142CE /* GoogleService-Info.plist */; };
 		D2CC83B31DB8468500A259BE /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CC83B21DB8468500A259BE /* CustomCell.xib */; };
 		D2CC83B51DB8471800A259BE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC83B41DB8471800A259BE /* CustomCell.swift */; };
 		D2CC83BB1DB88D8800A259BE /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CC83BA1DB88D8800A259BE /* EventCell.swift */; };
@@ -73,6 +74,8 @@
 		D20893581DA4C22A0054AB34 /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		D22EA9A11DB73F0200923A5B /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		D22EA9A31DB73F7C00923A5B /* InviteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteList.swift; sourceTree = "<group>"; };
+		D2443FA21DC270A500291032 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D2443FA41DC275D300291032 /* Invyte.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Invyte.entitlements; sourceTree = "<group>"; };
 		D24578171DA2CEAC0069B686 /* CreateEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateEvent.swift; sourceTree = "<group>"; };
 		D24578191DA2CEC20069B686 /* FindFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriends.swift; sourceTree = "<group>"; };
 		D245781B1DA2CEDC0069B686 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -104,8 +107,9 @@
 		D27F57141DB603FF00212CCB /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		D27F57161DB604ED00212CCB /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		D27F57181DB6227900212CCB /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		D2B7AC381DC927FC00072961 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		D2B7AC391DC927FC00072961 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		D2BC12721DA5F85E002142CE /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
-		D2BC12741DA603F4002142CE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D2CC83B21DB8468500A259BE /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		D2CC83B41DB8471800A259BE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		D2CC83BA1DB88D8800A259BE /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventCell.swift; path = ../EventCell.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 		D24578231DA2CF290069B686 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D24578261DA2E6EE0069B686 /* LoginScreen.swift */,
+				D2BC12721DA5F85E002142CE /* CreateAccount.swift */,
 				D20893581DA4C22A0054AB34 /* MainMenu.swift */,
 				D24578171DA2CEAC0069B686 /* CreateEvent.swift */,
 				D24578241DA2DE5F0069B686 /* ViewInvytes.swift */,
@@ -175,8 +181,6 @@
 				D245781D1DA2CEFF0069B686 /* ShareAndRate.swift */,
 				D245781F1DA2CF0A0069B686 /* Help.swift */,
 				D24578211DA2CF1D0069B686 /* SupportInvyte.swift */,
-				D2BC12721DA5F85E002142CE /* CreateAccount.swift */,
-				D24578261DA2E6EE0069B686 /* LoginScreen.swift */,
 				D27F57161DB604ED00212CCB /* FriendViewController.swift */,
 				D27F57141DB603FF00212CCB /* RequestViewController.swift */,
 				D27F570E1DB5FEBD00212CCB /* FriendSystem.swift */,
@@ -210,10 +214,13 @@
 		D27398241DA070A200480B4B /* Invyte */ = {
 			isa = PBXGroup;
 			children = (
-				D2BC12741DA603F4002142CE /* GoogleService-Info.plist */,
+				D2443FA41DC275D300291032 /* Invyte.entitlements */,
+				D2443FA21DC270A500291032 /* GoogleService-Info.plist */,
 				D245782A1DA2F9C10069B686 /* Game of Thrones.ttf */,
 				D27398251DA070A200480B4B /* AppDelegate.swift */,
 				D27398291DA070A200480B4B /* Main.storyboard */,
+				D2B7AC381DC927FC00072961 /* KeychainWrapper.h */,
+				D2B7AC391DC927FC00072961 /* KeychainWrapper.m */,
 				D24578231DA2CF290069B686 /* ViewControllers */,
 				D273985A1DA07C7000480B4B /* BackTableVC.swift */,
 				D273982C1DA070A200480B4B /* Assets.xcassets */,
@@ -339,6 +346,14 @@
 						DevelopmentTeam = 28KF4K4M63;
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					D27398351DA070A200480B4B = {
 						CreatedOnToolsVersion = 8.0;
@@ -378,11 +393,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2CC83BD1DB88DAC00A259BE /* EventCell.xib in Resources */,
+				D2443FA31DC270A500291032 /* GoogleService-Info.plist in Resources */,
 				D27398301DA070A200480B4B /* LaunchScreen.storyboard in Resources */,
 				D245782B1DA2F9C10069B686 /* Game of Thrones.ttf in Resources */,
 				D2CC83B31DB8468500A259BE /* CustomCell.xib in Resources */,
 				D27F57191DB6227900212CCB /* UserCell.xib in Resources */,
-				D2BC12751DA603F4002142CE /* GoogleService-Info.plist in Resources */,
 				D273982D1DA070A200480B4B /* Assets.xcassets in Resources */,
 				D273982B1DA070A200480B4B /* Main.storyboard in Resources */,
 			);
@@ -546,6 +561,7 @@
 				D27F57131DB6037300212CCB /* UserCell.swift in Sources */,
 				D27F57111DB6015600212CCB /* User.swift in Sources */,
 				D245781A1DA2CEC20069B686 /* FindFriends.swift in Sources */,
+				D2B7AC3A1DC927FC00072961 /* KeychainWrapper.m in Sources */,
 				D20893591DA4C22A0054AB34 /* MainMenu.swift in Sources */,
 				D27F57171DB604ED00212CCB /* FriendViewController.swift in Sources */,
 				D27398261DA070A200480B4B /* AppDelegate.swift in Sources */,
@@ -707,6 +723,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Invyte/Invyte.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arian Mohajer (FS64T7GX53)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 28KF4K4M63;
 				INFOPLIST_FILE = Invyte/Info.plist;
@@ -725,6 +743,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Invyte/Invyte.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Arian Mohajer (FS64T7GX53)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 28KF4K4M63;
 				INFOPLIST_FILE = Invyte/Info.plist;

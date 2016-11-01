@@ -120,21 +120,21 @@ class FriendSystem {
      - parameter completion: What to do when the block has finished running. The success variable
      indicates whether or not the login was a success
      */
-    func loginAccount(_ email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
-        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-            
-            if (error == nil) {
-                // Success
-                completion(true)
-            } else {
-                // Failure
-                completion(false)
-                print(error)
-            }
-            
-        })
-    }
-    
+//    func loginAccount(_ email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
+//        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+//            
+//            if (error == nil) {
+//                // Success
+//                completion(true)
+//            } else {
+//                // Failure
+//                completion(false)
+//                print(error)
+//            }
+//            
+//        })
+//    }
+//    
     /** Logs out an account */
     func logoutAccount() {
         try! FIRAuth.auth()?.signOut()

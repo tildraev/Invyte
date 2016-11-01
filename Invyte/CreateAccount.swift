@@ -18,6 +18,8 @@ class CreateAccount : UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordConfirmTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     
+    let myKeychainWrapper = KeychainWrapper()
+    
     var ref = FIRDatabase.database().reference()
     
     override func viewDidLoad() {
@@ -49,6 +51,19 @@ class CreateAccount : UIViewController, UITextFieldDelegate {
                     FIRAuth.auth()?.createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion: { (user, error) in
                         if error == nil
                         {
+                            //Do keychain stuff here
+                            let hasLoginKey = UserDefaults.standard.bool(forKey: "hasLoginKey")
+                            if (hasLoginKey == false) {
+                                UserDefaults.standard.setValue(self.emailTextField.text, forKey: "username")
+                            }
+                            
+                            self.myKeychainWrapper.mySetObject(self.passwordTextField.text, forKey: kSecValueData)
+                            self.myKeychainWrapper.writeToKeychain()
+                            UserDefaults.standard.set(true, forKey: "hasLoginKey")
+                            UserDefaults.standard.synchronize()
+                            
+                            
+                            //Create the account and log in
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Reveal")
                             self.present(vc!, animated: true, completion: nil)
                             self.ref.child("users").child(user!.uid).setValue(["Name": self.firstNameTextField.text!.lowercased() + " " + self.lastNameTextField.text!.lowercased(), "Email": self.emailTextField.text!, "Score": 0, "Username": self.usernameTextField.text!.lowercased()])

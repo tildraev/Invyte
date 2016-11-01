@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B43DAF4067DF0CB48776BF270B3FA180"
+               BlueprintIdentifier = "9E683F3EAD03F210D924E6B9257C9B73"
                BuildableName = "Pods_Invyte.framework"
                BlueprintName = "Pods-Invyte"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B43DAF4067DF0CB48776BF270B3FA180"
+            BlueprintIdentifier = "9E683F3EAD03F210D924E6B9257C9B73"
             BuildableName = "Pods_Invyte.framework"
             BlueprintName = "Pods-Invyte"
             ReferencedContainer = "container:Pods.xcodeproj">

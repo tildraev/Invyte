@@ -12,6 +12,7 @@ pod 'Firebase/Database'
 pod 'Firebase/Auth'
 pod 'FBSDKLoginKit'
 pod 'FirebaseAuth'
+pod 'Firebase/Messaging'
 
 
   target 'InvyteTests' do
