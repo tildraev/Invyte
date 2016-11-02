@@ -12,16 +12,14 @@ class CreateEvent : UIViewController, UITextViewDelegate{
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var eventTitleTextField: UITextView!
     @IBOutlet weak var eventDescriptionTextField: UITextView!
+    @IBOutlet weak var findFriendsButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = self.backgroundImage.bounds
-        backgroundImage.addSubview(blurView)
-        
-        //self.view.backgroundColor = UIColor.init(patternImage: #imageLiteral(resourceName: "GatsbyBackground"))
+        findFriendsButton.backgroundColor = UIColor.clear
+        findFriendsButton.layer.cornerRadius = 5
+        findFriendsButton.layer.borderWidth = 1
+        findFriendsButton.layer.borderColor = UIColor.white.cgColor
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
     

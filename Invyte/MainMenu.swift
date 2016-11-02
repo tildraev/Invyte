@@ -35,10 +35,7 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     func makeItLookPretty()
     {
-        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = self.backgroundImage.bounds
-        backgroundImage.addSubview(blurView)
+        
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         if let user = FIRAuth.auth()?.currentUser{
@@ -75,20 +72,27 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         let creatorID = FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID
         
         // Modify cell
+        
         cell!.label.text = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
+        cell!.label.textColor = UIColor.white
+        cell!.label.alpha = 1
+        
+        cell!.descriptionButton.isEnabled = false
+        cell!.descriptionButton.alpha = 0
         
         cell!.setDescriptionButtonAction {
+            //
+        }
+        
+        cell!.acceptButton.isEnabled = true
+        cell!.acceptButton.alpha = 1
+        cell!.acceptButton.setTitle("Details", for: UIControlState.normal)
+        
+        cell!.setAcceptButtonAction {
             let descriptionToAlert = FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription
             FriendSystem.system.getUser(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID!, completion: { (user) in
                 self.presentAlertView(description: descriptionToAlert!, title: user.username!.capitalized + " invytes you to:")
             })
-        }
-        
-        cell!.acceptButton.isEnabled = false
-        cell!.acceptButton.alpha = 0
-        cell!.setAcceptButtonAction {
-            //FriendSystem.system.acceptEventRequest(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID, titleAndDescription: FriendSystem.system.eventsAcceptedList[indexPath.row].titleAndDescription)
-            //Do nothing
         }
         
         cell!.declineButton.setTitle("Remove", for: UIControlState.normal)

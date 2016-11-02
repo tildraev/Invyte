@@ -18,10 +18,7 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
-        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = self.backgroundImage.bounds
-        backgroundImage.addSubview(blurView)
+
         self.view.backgroundColor = UIColor.black
         
         tableView.delegate = self

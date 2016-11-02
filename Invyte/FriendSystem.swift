@@ -163,6 +163,10 @@ class FriendSystem {
         USER_REF.child(userID).child("Requests").child(CURRENT_USER_ID).removeValue()
     }
     
+    func rejectFriendRequest(_ userID: String) {
+        CURRENT_USER_REF.child("Requests").child(userID).removeValue()
+    }
+    
     
     
     // MARK: - All users
@@ -240,7 +244,6 @@ class FriendSystem {
                 self.getEventsAccepted(child.key, completion: { (event) in
                     self.eventsAcceptedList.append(event)
                     update()
-                    print(child.key)
                 })
             }
             if snapshot.childrenCount == 0 {

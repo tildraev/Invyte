@@ -12,13 +12,16 @@ import Firebase
 class UserInfo : UIViewController {
     
     @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = self.backgroundImage.bounds
-        backgroundImage.addSubview(blurView)
+        
+        logoutButton.backgroundColor = UIColor.clear
+        logoutButton.layer.cornerRadius = 5
+        logoutButton.layer.borderWidth = 1
+        logoutButton.layer.borderColor = UIColor.white.cgColor
+        
         self.view.backgroundColor = UIColor.black
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }

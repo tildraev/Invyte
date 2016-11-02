@@ -36,19 +36,28 @@ class RequestViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create cell
-        var cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
         if cell == nil {
-            tableView.register(UINib(nibName: "UserCell", bundle: nil), forCellReuseIdentifier: "UserCell")
-            cell = tableView.dequeueReusableCell(withIdentifier: "UserCell") as? UserCell
+            tableView.register(UINib(nibName: "CustomCell", bundle: nil), forCellReuseIdentifier: "CustomCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell") as? CustomCell
         }
         
         // Modify cell
-        cell!.button.setTitle("Accept", for: UIControlState())
-        cell!.emailLabel.text = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].email
+        cell!.label.text = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].username
+        cell!.rightButton.setTitle("Accept", for: UIControlState.normal)
+        cell!.rightButton.setTitleColor(UIColor.green, for: UIControlState.normal)
+        cell!.leftButton.isEnabled = true
+        cell!.leftButton.setTitle("Decline", for: UIControlState.normal)
+        cell!.leftButton.setTitleColor(UIColor.red, for: UIControlState.normal)
         
-        cell!.setFunction {
+        cell!.setRightButtonAction {
             let id = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].id
             FriendSystem.system.acceptFriendRequest(id!)
+        }
+        
+        cell!.setLeftButtonAction {
+            let id = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].id
+            FriendSystem.system.rejectFriendRequest(id!)
         }
         
         // Return cell

@@ -11,6 +11,7 @@ import Firebase
 
 class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate{
     
+    @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var searchBarTextField: UITextField!
     var count = 0
@@ -24,10 +25,12 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView()
-        let blurEffect  = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.frame = self.backgroundImage.bounds
-        backgroundImage.addSubview(blurView)
+        
+        searchButton.backgroundColor = UIColor.clear
+        searchButton.layer.cornerRadius = 5
+        searchButton.layer.borderWidth = 1
+        searchButton.layer.borderColor = UIColor.white.cgColor
+
         self.view.backgroundColor = UIColor.black
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
@@ -135,7 +138,7 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         
         cell!.label.alpha = 0
         cell?.leftButton.isEnabled = false
-        cell?.leftButton.setTitleColor(UIColor.black, for: UIControlState.disabled)
+        cell?.leftButton.setTitleColor(UIColor.white, for: UIControlState.disabled)
         cell!.leftButton.setTitle(usernameResults[indexPath.row], for: UIControlState.disabled)
         
         cell!.rightButton.setTitle("Add", for: UIControlState.normal)

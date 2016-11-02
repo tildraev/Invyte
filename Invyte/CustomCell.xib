@@ -16,46 +16,56 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xTN-cH-f8Y" id="GJE-PL-1X8">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-fw-Elv">
-                        <rect key="frame" x="0.0" y="7" width="124" height="30"/>
-                        <state key="normal" title="Button"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="silverButton" translatesAutoresizingMaskIntoConstraints="NO" id="ZTw-XK-LCI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="47"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WA-fw-Elv">
+                        <rect key="frame" x="21" y="7" width="111" height="30"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <connections>
                             <action selector="leftButtonTapped:" destination="xTN-cH-f8Y" eventType="touchUpInside" id="Mly-6b-0gy"/>
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZJm-RT-yvg">
-                        <rect key="frame" x="240" y="7" width="130" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="130" id="6Ll-iS-Nui"/>
-                        </constraints>
-                        <state key="normal" title="Add"/>
+                        <rect key="frame" x="240" y="7" width="115" height="30"/>
+                        <state key="normal" title="Add">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <connections>
                             <action selector="rightButtonTapped:" destination="xTN-cH-f8Y" eventType="touchUpInside" id="Yeg-Ls-07Z"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVQ-hp-jgr">
-                        <rect key="frame" x="132" y="12" width="111" height="21"/>
+                        <rect key="frame" x="140" y="12" width="96" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="111" id="BMg-NJ-PPn"/>
+                            <constraint firstAttribute="width" constant="96" id="xjh-UD-JKm"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="0WA-fw-Elv" firstAttribute="leading" secondItem="GJE-PL-1X8" secondAttribute="leading" id="0SI-8k-kas"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ZJm-RT-yvg" secondAttribute="trailing" constant="-3" id="6Ce-s5-hob"/>
-                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="leading" secondItem="0WA-fw-Elv" secondAttribute="trailing" constant="8" symbolic="YES" id="AT9-Ra-C0V"/>
-                    <constraint firstItem="0WA-fw-Elv" firstAttribute="centerY" secondItem="GJE-PL-1X8" secondAttribute="centerY" id="GWd-kB-85Y"/>
-                    <constraint firstItem="0WA-fw-Elv" firstAttribute="baseline" secondItem="ZJm-RT-yvg" secondAttribute="baseline" id="JZT-9p-oxa"/>
-                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="centerY" secondItem="ZJm-RT-yvg" secondAttribute="centerY" id="ZzC-UV-rs5"/>
-                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="centerX" secondItem="GJE-PL-1X8" secondAttribute="centerX" id="n3U-X4-zuz"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="baseline" secondItem="ZJm-RT-yvg" secondAttribute="baseline" id="1Pn-7K-iJg"/>
+                    <constraint firstAttribute="trailing" secondItem="ZTw-XK-LCI" secondAttribute="trailing" id="B6X-80-CzK"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="leading" secondItem="GJE-PL-1X8" secondAttribute="leadingMargin" constant="13" id="Lxh-Sd-Dbo"/>
+                    <constraint firstItem="ZTw-XK-LCI" firstAttribute="top" secondItem="GJE-PL-1X8" secondAttribute="top" id="MJ9-cd-VIT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ZJm-RT-yvg" secondAttribute="trailing" constant="12" id="NAL-HK-9mn"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="centerY" secondItem="GJE-PL-1X8" secondAttribute="centerY" id="fZo-eA-6Hg"/>
+                    <constraint firstItem="ZJm-RT-yvg" firstAttribute="leading" secondItem="TVQ-hp-jgr" secondAttribute="trailing" constant="4" id="fpP-AO-EkS"/>
+                    <constraint firstItem="TVQ-hp-jgr" firstAttribute="leading" secondItem="0WA-fw-Elv" secondAttribute="trailing" constant="8" symbolic="YES" id="l7K-6v-dRz"/>
+                    <constraint firstItem="ZTw-XK-LCI" firstAttribute="centerX" secondItem="TVQ-hp-jgr" secondAttribute="centerX" id="rVp-G4-3BO"/>
+                    <constraint firstItem="ZTw-XK-LCI" firstAttribute="leading" secondItem="GJE-PL-1X8" secondAttribute="leading" id="svO-qv-2AZ"/>
+                    <constraint firstItem="0WA-fw-Elv" firstAttribute="centerY" secondItem="TVQ-hp-jgr" secondAttribute="centerY" id="v1D-tM-X1Q"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ZTw-XK-LCI" secondAttribute="bottom" constant="-12" id="wNJ-w2-8hU"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="label" destination="TVQ-hp-jgr" id="Occ-33-avF"/>
                 <outlet property="leftButton" destination="0WA-fw-Elv" id="a1X-g2-eD7"/>
@@ -64,4 +74,7 @@
             <point key="canvasLocation" x="-191.5" y="-66"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="silverButton" width="321" height="115"/>
+    </resources>
 </document>

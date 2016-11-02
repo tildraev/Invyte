@@ -15,10 +15,8 @@ class BackTableVC: UITableViewController {
     
     override func viewDidLoad() {
         tableArray = ["Main Menu", "Create Event", "View Invytes", "Find Friends", "User Info", "Share & Rate", "Help", "Support Invyte", "View Friends", "Friend Requests"]
-        //self.tableView.backgroundView = UIImageView(image: #imageLiteral(resourceName: "GatsbyBackground"))
         self.view.backgroundColor = UIColor.black
         let imageView = UIImageView(image: #imageLiteral(resourceName: "GatsbyBackground"))
-        imageView.alpha = 0.2
         self.tableView.backgroundView = imageView
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }

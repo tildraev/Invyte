@@ -189,6 +189,21 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		D24758581DC9A14D00F5ABD5 /* Nib Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				D27F57121DB6037300212CCB /* UserCell.swift */,
+				D2CC83B21DB8468500A259BE /* CustomCell.xib */,
+				D2CC83B41DB8471800A259BE /* CustomCell.swift */,
+				D27F57181DB6227900212CCB /* UserCell.xib */,
+				D27F57101DB6015600212CCB /* User.swift */,
+				D22EA9A11DB73F0200923A5B /* Event.swift */,
+				D2CC83BA1DB88D8800A259BE /* EventCell.swift */,
+				D2CC83BC1DB88DAC00A259BE /* EventCell.xib */,
+			);
+			name = "Nib Stuff";
+			sourceTree = "<group>";
+		};
 		D27398191DA070A200480B4B = {
 			isa = PBXGroup;
 			children = (
@@ -219,21 +234,12 @@
 				D245782A1DA2F9C10069B686 /* Game of Thrones.ttf */,
 				D27398251DA070A200480B4B /* AppDelegate.swift */,
 				D27398291DA070A200480B4B /* Main.storyboard */,
-				D2B7AC381DC927FC00072961 /* KeychainWrapper.h */,
-				D2B7AC391DC927FC00072961 /* KeychainWrapper.m */,
 				D24578231DA2CF290069B686 /* ViewControllers */,
 				D273985A1DA07C7000480B4B /* BackTableVC.swift */,
 				D273982C1DA070A200480B4B /* Assets.xcassets */,
 				D273982E1DA070A200480B4B /* LaunchScreen.storyboard */,
 				D27398551DA0768C00480B4B /* Supporting Files */,
-				D27F57121DB6037300212CCB /* UserCell.swift */,
-				D2CC83B21DB8468500A259BE /* CustomCell.xib */,
-				D2CC83B41DB8471800A259BE /* CustomCell.swift */,
-				D27F57181DB6227900212CCB /* UserCell.xib */,
-				D27F57101DB6015600212CCB /* User.swift */,
-				D22EA9A11DB73F0200923A5B /* Event.swift */,
-				D2CC83BA1DB88D8800A259BE /* EventCell.swift */,
-				D2CC83BC1DB88DAC00A259BE /* EventCell.xib */,
+				D24758581DC9A14D00F5ABD5 /* Nib Stuff */,
 			);
 			path = Invyte;
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 				D27398571DA076CA00480B4B /* SWRevealViewController.h */,
 				D27398581DA076CA00480B4B /* SWRevealViewController.m */,
 				D27398561DA076C900480B4B /* Invyte-Bridging-Header.h */,
+				D2B7AC381DC927FC00072961 /* KeychainWrapper.h */,
+				D2B7AC391DC927FC00072961 /* KeychainWrapper.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
