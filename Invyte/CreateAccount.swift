@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import OneSignal
 
 class CreateAccount : UIViewController, UITextFieldDelegate {
     
@@ -30,6 +31,7 @@ class CreateAccount : UIViewController, UITextFieldDelegate {
     
     @IBAction func createButtonTapped(_ sender: AnyObject) {
         
+        var oneSignalID = ""
         //If any fields left blank
         if (self.emailTextField.text == "" || self.passwordTextField.text == "" || passwordConfirmTextField.text == "" || usernameTextField.text == "" || firstNameTextField.text == "" || lastNameTextField.text == "")
         {
@@ -62,11 +64,17 @@ class CreateAccount : UIViewController, UITextFieldDelegate {
                             UserDefaults.standard.set(true, forKey: "hasLoginKey")
                             UserDefaults.standard.synchronize()
                             
+                            OneSignal.idsAvailable({ (userId, pushToken) in
+                                print("UserId:%@", userId!)
+                                if (pushToken != nil) {
+                                    oneSignalID = userId!
+                                }
+                            })
                             
                             //Create the account and log in
                             let vc = self.storyboard?.instantiateViewController(withIdentifier: "Reveal")
                             self.present(vc!, animated: true, completion: nil)
-                            self.ref.child("users").child(user!.uid).setValue(["Name": self.firstNameTextField.text!.lowercased() + " " + self.lastNameTextField.text!.lowercased(), "Email": self.emailTextField.text!, "Score": 0, "Username": self.usernameTextField.text!.lowercased()])
+                            self.ref.child("users").child(user!.uid).setValue(["Name": self.firstNameTextField.text!.lowercased() + " " + self.lastNameTextField.text!.lowercased(), "Email": self.emailTextField.text!, "Score": 0, "Username": self.usernameTextField.text!.lowercased(), "OneSignalID": oneSignalID])
                         }
                         else
                         {

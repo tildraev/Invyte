@@ -98,6 +98,7 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell!.declineButton.setTitle("Remove", for: UIControlState.normal)
         cell!.setDeclineButtonAction {
             FriendSystem.system.removeEvent(creatorID!)
+            FriendSystem.system.removeEventRequest(creatorID!)
         }
         
         return cell!

@@ -26,3 +26,4 @@ pod 'Firebase/Messaging'
   end
 
 end
+pod 'OneSignal'

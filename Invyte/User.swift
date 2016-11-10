@@ -13,11 +13,13 @@ class User {
     var username: String!
     var email: String!
     var id: String!
+    var oneSignalID: String!
     
-    init(username: String, userEmail: String, userID: String) {
+    init(username: String, userEmail: String, userID: String, oneSignalID: String) {
         self.email = userEmail
         self.id = userID
         self.username = username
+        self.oneSignalID = oneSignalID
     }
     
 }

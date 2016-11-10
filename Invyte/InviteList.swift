@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import OneSignal
 
 class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -63,8 +64,13 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         cell!.setRightButtonAction {
             FriendSystem.system.sendEventRequestToUser(userID: FriendSystem.system.friendList[indexPath.row].id, Event(creatorID: FriendSystem.system.CURRENT_USER_ID, eventTitleAndDescription: title))
+            
             cell!.rightButton.isEnabled = false
             cell!.rightButton.setTitle("Invyted", for: UIControlState.disabled)
+            
+            
+            OneSignal.postNotification(["contents": ["en": "You have a new Invyte!"], "include_player_ids": [FriendSystem.system.friendList[indexPath.row].oneSignalID]])
+            
         }
         
         // Return cell

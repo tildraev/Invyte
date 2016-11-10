@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import OneSignal
 
 class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UITextViewDelegate{
     
@@ -146,12 +147,16 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
         
         cell!.setRightButtonAction {
             var theirUID = ""
+            var oneSignalID = ""
             self.ref.child("users").queryOrdered(byChild: "Username").queryEqual(toValue: self.usernameResults[indexPath.row]).observeSingleEvent(of: FIRDataEventType.childAdded, with: { (thirdSnapshot) in
                 theirUID = thirdSnapshot.key
+                oneSignalID = thirdSnapshot.childSnapshot(forPath: "OneSignalID").value as! String
                 FriendSystem.system.sendRequestToUser(theirUID)
+                
                 cell!.rightButton.isEnabled = false
                 cell!.rightButton.setTitle("Request sent!", for: UIControlState.disabled)
                 self.addClicked = true
+                OneSignal.postNotification(["contents": ["en": "You have a new friend request!"], "include_player_ids": [oneSignalID]])
             })
         }
         

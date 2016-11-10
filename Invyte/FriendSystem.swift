@@ -58,8 +58,9 @@ class FriendSystem {
         CURRENT_USER_REF.observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
             let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
+            let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
             let id = snapshot.key
-            completion(User(username: username, userEmail: email, userID: id))
+            completion(User(username: username, userEmail: email, userID: id, oneSignalID: oneSignalID))
         })
     }
     /** Gets the User object for the specified user id */
@@ -67,8 +68,9 @@ class FriendSystem {
         USER_REF.child(userID).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
             let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
+            let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
             let id = snapshot.key
-            completion(User(username: username, userEmail: email, userID: id))
+            completion(User(username: username, userEmail: email, userID: id, oneSignalID: oneSignalID))
             }, withCancel: { (error) in
                 print(error.localizedDescription)
         })
@@ -180,8 +182,9 @@ class FriendSystem {
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 let username = child.childSnapshot(forPath: "Username").value as! String
                 let email = child.childSnapshot(forPath: "Email").value as! String
+                let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
                 if email != FIRAuth.auth()?.currentUser?.email! {
-                    self.userList.append(User(username: username, userEmail: email, userID: child.key))
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key, oneSignalID: oneSignalID))
                 }
             }
             update()
@@ -192,8 +195,9 @@ class FriendSystem {
             for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
                 let username = child.childSnapshot(forPath: "Username").value as! String
                 let email = child.childSnapshot(forPath: "Email").value as! String
+                let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
                 if email != FIRAuth.auth()?.currentUser?.email! {
-                    self.userList.append(User(username: username, userEmail: email, userID: child.key))
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key, oneSignalID: oneSignalID))
                 }
             }
             update()
