@@ -63,13 +63,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invyte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR6-wc-K3y">
-                                <rect key="frame" x="91" y="84" width="194" height="48"/>
+                                <rect key="frame" x="91.5" y="84" width="193.5" height="48"/>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIV-2t-HMH">
-                                <rect key="frame" x="91" y="450" width="194" height="30"/>
+                                <rect key="frame" x="91.5" y="450" width="193.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UKH-2H-r74"/>
                                 </constraints>
@@ -423,6 +423,9 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KV-SM-LOv">
                                 <rect key="frame" x="16" y="50" width="343" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="ggs-pU-f1l"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -430,57 +433,89 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Al8-ZI-U8e">
                                 <rect key="frame" x="16" y="638" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="UJy-Qo-752"/>
+                                    <constraint firstAttribute="height" constant="21" id="CsA-ZN-CBj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current events:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0Q-0W-S6h">
-                                <rect key="frame" x="89.5" y="229" width="197.5" height="21"/>
+                                <rect key="frame" x="88" y="227" width="198" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="PR5-F3-Ym1"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXt-dW-kdj">
-                                <rect key="frame" x="16" y="268" width="343" height="353"/>
+                                <rect key="frame" x="16" y="265" width="343" height="356"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;  &gt;  &gt;  Swipe to begin  &gt;  &gt;  &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-s3-ogn">
-                                <rect key="frame" x="53" y="135" width="269" height="20"/>
+                                <rect key="frame" x="53" y="85" width="269" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="8Jc-Zb-G0M"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Friend Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-Zu-mNj">
+                                <rect key="frame" x="37" y="130" width="301" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="yMG-i3-soy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Invyte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1z-c6-iR5">
+                                <rect key="frame" x="74" y="172" width="226" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="xje-Yq-jtw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lh8-s3-ogn" firstAttribute="centerX" secondItem="N0Q-0W-S6h" secondAttribute="centerX" id="E38-Vx-aJW"/>
-                            <constraint firstItem="ua6-HV-teL" firstAttribute="bottom" secondItem="ErM-jY-WZV" secondAttribute="top" id="StS-ra-uZf"/>
-                            <constraint firstItem="Al8-ZI-U8e" firstAttribute="top" secondItem="hXt-dW-kdj" secondAttribute="bottom" constant="17" id="T2I-qm-Z6R"/>
-                            <constraint firstItem="hXt-dW-kdj" firstAttribute="leading" secondItem="Al8-ZI-U8e" secondAttribute="leading" id="XnZ-4w-ke5"/>
-                            <constraint firstItem="Al8-ZI-U8e" firstAttribute="leading" secondItem="6KV-SM-LOv" secondAttribute="leading" id="aSW-vB-Mp4"/>
-                            <constraint firstAttribute="trailing" secondItem="ua6-HV-teL" secondAttribute="trailing" id="c55-9p-yfH"/>
-                            <constraint firstItem="Al8-ZI-U8e" firstAttribute="trailing" secondItem="6KV-SM-LOv" secondAttribute="trailing" id="dBd-gd-bx5"/>
-                            <constraint firstItem="Lh8-s3-ogn" firstAttribute="centerX" secondItem="6KV-SM-LOv" secondAttribute="centerX" id="dQA-4X-RQq"/>
-                            <constraint firstItem="6KV-SM-LOv" firstAttribute="leading" secondItem="Y5B-6T-YmD" secondAttribute="leadingMargin" id="daw-NE-uIN"/>
-                            <constraint firstItem="6KV-SM-LOv" firstAttribute="centerX" secondItem="ua6-HV-teL" secondAttribute="centerX" id="eCg-e4-cLE"/>
-                            <constraint firstItem="N0Q-0W-S6h" firstAttribute="top" secondItem="Lh8-s3-ogn" secondAttribute="bottom" constant="74" id="gBi-SD-tCh"/>
-                            <constraint firstItem="Lh8-s3-ogn" firstAttribute="top" secondItem="6KV-SM-LOv" secondAttribute="bottom" constant="65" id="gdZ-CF-KCZ"/>
-                            <constraint firstItem="hXt-dW-kdj" firstAttribute="top" secondItem="N0Q-0W-S6h" secondAttribute="bottom" constant="18" id="h2R-e2-7Gi"/>
-                            <constraint firstItem="6KV-SM-LOv" firstAttribute="top" secondItem="4pa-Rg-mJG" secondAttribute="bottom" constant="30" id="i8r-sk-dGu"/>
-                            <constraint firstItem="ErM-jY-WZV" firstAttribute="top" secondItem="Al8-ZI-U8e" secondAttribute="bottom" constant="8" symbolic="YES" id="oMl-d4-rZg"/>
-                            <constraint firstItem="ua6-HV-teL" firstAttribute="leading" secondItem="Y5B-6T-YmD" secondAttribute="leading" id="pWQ-OT-MRi"/>
-                            <constraint firstItem="ua6-HV-teL" firstAttribute="top" secondItem="Y5B-6T-YmD" secondAttribute="top" id="skk-aV-6P4"/>
-                            <constraint firstItem="hXt-dW-kdj" firstAttribute="trailing" secondItem="Al8-ZI-U8e" secondAttribute="trailing" id="zTD-Cm-cJS"/>
+                            <constraint firstItem="6KV-SM-LOv" firstAttribute="centerX" secondItem="Lh8-s3-ogn" secondAttribute="centerX" id="0Ob-sy-KdW"/>
+                            <constraint firstItem="6KV-SM-LOv" firstAttribute="leading" secondItem="Y5B-6T-YmD" secondAttribute="leadingMargin" id="0Ok-H5-ww0"/>
+                            <constraint firstItem="J1z-c6-iR5" firstAttribute="top" secondItem="qdM-Zu-mNj" secondAttribute="bottom" constant="22" id="4D8-ew-ZyG"/>
+                            <constraint firstItem="ua6-HV-teL" firstAttribute="bottom" secondItem="ErM-jY-WZV" secondAttribute="top" id="4wY-oI-PlD"/>
+                            <constraint firstItem="hXt-dW-kdj" firstAttribute="trailing" secondItem="Al8-ZI-U8e" secondAttribute="trailing" id="5mk-RW-GCh"/>
+                            <constraint firstAttribute="trailing" secondItem="ua6-HV-teL" secondAttribute="trailing" id="Aeh-ce-4Re"/>
+                            <constraint firstItem="ua6-HV-teL" firstAttribute="leading" secondItem="Y5B-6T-YmD" secondAttribute="leading" id="Brw-bW-3no"/>
+                            <constraint firstItem="Lh8-s3-ogn" firstAttribute="centerX" secondItem="qdM-Zu-mNj" secondAttribute="centerX" id="Ecs-ch-an2"/>
+                            <constraint firstItem="J1z-c6-iR5" firstAttribute="centerX" secondItem="qdM-Zu-mNj" secondAttribute="centerX" id="GiC-Gz-Chq"/>
+                            <constraint firstItem="6KV-SM-LOv" firstAttribute="top" secondItem="4pa-Rg-mJG" secondAttribute="bottom" constant="30" id="H19-Cr-uu8"/>
+                            <constraint firstItem="qdM-Zu-mNj" firstAttribute="leading" secondItem="Y5B-6T-YmD" secondAttribute="leadingMargin" constant="21" id="QDb-HG-ZnM"/>
+                            <constraint firstItem="hXt-dW-kdj" firstAttribute="top" secondItem="N0Q-0W-S6h" secondAttribute="bottom" constant="18" id="Uow-9c-G3d"/>
+                            <constraint firstItem="J1z-c6-iR5" firstAttribute="centerX" secondItem="N0Q-0W-S6h" secondAttribute="centerX" id="V0g-6h-efb"/>
+                            <constraint firstItem="qdM-Zu-mNj" firstAttribute="top" secondItem="Lh8-s3-ogn" secondAttribute="bottom" constant="25" id="dkY-RQ-jwe"/>
+                            <constraint firstItem="ua6-HV-teL" firstAttribute="centerX" secondItem="N0Q-0W-S6h" secondAttribute="centerX" id="fjl-Ed-6rn"/>
+                            <constraint firstItem="J1z-c6-iR5" firstAttribute="leading" secondItem="Y5B-6T-YmD" secondAttribute="leadingMargin" constant="58" id="hXN-6U-DdP"/>
+                            <constraint firstItem="ua6-HV-teL" firstAttribute="top" secondItem="Y5B-6T-YmD" secondAttribute="top" id="j8p-aE-He6"/>
+                            <constraint firstItem="N0Q-0W-S6h" firstAttribute="top" secondItem="J1z-c6-iR5" secondAttribute="bottom" constant="35" id="lQC-Gi-n7j"/>
+                            <constraint firstItem="hXt-dW-kdj" firstAttribute="leading" secondItem="Al8-ZI-U8e" secondAttribute="leading" id="nlJ-aA-KAb"/>
+                            <constraint firstItem="6KV-SM-LOv" firstAttribute="trailing" secondItem="hXt-dW-kdj" secondAttribute="trailing" id="o63-1G-dra"/>
+                            <constraint firstItem="Al8-ZI-U8e" firstAttribute="top" secondItem="hXt-dW-kdj" secondAttribute="bottom" constant="17" id="p5y-58-M8C"/>
+                            <constraint firstItem="Lh8-s3-ogn" firstAttribute="top" secondItem="6KV-SM-LOv" secondAttribute="bottom" constant="15" id="qmh-pY-SfP"/>
+                            <constraint firstItem="ErM-jY-WZV" firstAttribute="top" secondItem="Al8-ZI-U8e" secondAttribute="bottom" constant="8" symbolic="YES" id="t8J-5j-fMw"/>
+                            <constraint firstItem="6KV-SM-LOv" firstAttribute="leading" secondItem="hXt-dW-kdj" secondAttribute="leading" id="wW9-Po-nc6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IDa-d8-ZBg"/>
                     <connections>
                         <outlet property="backgroundImage" destination="ua6-HV-teL" id="wqi-8N-BlU"/>
                         <outlet property="loggedInAsLabel" destination="Al8-ZI-U8e" id="UgJ-Ah-ggo"/>
+                        <outlet property="newFriendLabel" destination="qdM-Zu-mNj" id="PJE-y1-PGr"/>
+                        <outlet property="newInvyteLabel" destination="J1z-c6-iR5" id="DWK-PR-85d"/>
                         <outlet property="tableView" destination="hXt-dW-kdj" id="25c-EZ-t0s"/>
                     </connections>
                 </viewController>
@@ -506,7 +541,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UyY-Uj-2P5">
                                 <rect key="frame" x="105" y="50" width="164" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="gOb-Ed-HRi"/>
+                                    <constraint firstAttribute="height" constant="20" id="UqU-Fa-Gw6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -516,7 +551,7 @@
                                 <rect key="frame" x="67" y="164" width="241" height="36"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="moz-jf-bUP"/>
+                                    <constraint firstAttribute="height" constant="36" id="TvJ-VO-APw"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -528,6 +563,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="NgO-yG-euX">
                                 <rect key="frame" x="67" y="270" width="241" height="127"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="127" id="fcM-RG-u0W"/>
+                                </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
@@ -538,7 +576,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGe-rg-FIl">
                                 <rect key="frame" x="83" y="242" width="209" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="BDS-wn-nYb"/>
+                                    <constraint firstAttribute="height" constant="20" id="hGM-P1-YN4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -547,8 +585,8 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kkG-0e-qjp">
                                 <rect key="frame" x="147" y="136" width="81" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="Ioq-Jh-71Q"/>
-                                    <constraint firstAttribute="height" constant="20" id="TB2-ZD-eED"/>
+                                    <constraint firstAttribute="height" constant="20" id="0TI-xR-oxR"/>
+                                    <constraint firstAttribute="width" constant="81" id="aqV-No-ru5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -557,7 +595,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKv-BK-I1M">
                                 <rect key="frame" x="105" y="505" width="166" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="NiS-8h-dXa"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZfI-X6-GPG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <state key="normal" title="Find Friends">
@@ -570,28 +608,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="leading" secondItem="HKv-BK-I1M" secondAttribute="leading" id="033-wJ-gyP"/>
-                            <constraint firstItem="WtA-z5-xqn" firstAttribute="centerX" secondItem="AGe-rg-FIl" secondAttribute="centerX" id="20n-f8-t6K"/>
-                            <constraint firstItem="kkG-0e-qjp" firstAttribute="top" secondItem="UyY-Uj-2P5" secondAttribute="bottom" constant="66" id="2Tn-Yq-fny"/>
-                            <constraint firstItem="N3L-sd-thC" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leading" id="6yq-28-WRF"/>
-                            <constraint firstAttribute="trailing" secondItem="N3L-sd-thC" secondAttribute="trailing" id="7nr-Dg-uuu"/>
-                            <constraint firstItem="WtA-z5-xqn" firstAttribute="leading" secondItem="NgO-yG-euX" secondAttribute="leading" id="7sv-we-Va0"/>
-                            <constraint firstItem="N3L-sd-thC" firstAttribute="centerY" secondItem="NgO-yG-euX" secondAttribute="centerY" id="9my-5u-pPp"/>
-                            <constraint firstItem="NgO-yG-euX" firstAttribute="top" secondItem="AGe-rg-FIl" secondAttribute="bottom" constant="8" symbolic="YES" id="Awo-21-0nD"/>
-                            <constraint firstItem="WtA-z5-xqn" firstAttribute="trailing" secondItem="NgO-yG-euX" secondAttribute="trailing" id="KYb-Xm-n7f"/>
-                            <constraint firstItem="WtA-z5-xqn" firstAttribute="top" secondItem="kkG-0e-qjp" secondAttribute="bottom" constant="8" symbolic="YES" id="Lhq-Vs-J7D"/>
-                            <constraint firstItem="N3L-sd-thC" firstAttribute="centerX" secondItem="UyY-Uj-2P5" secondAttribute="centerX" id="Pap-oL-etG"/>
-                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="top" secondItem="wEM-j5-Ce4" secondAttribute="bottom" constant="30" id="PbN-MD-fYK"/>
-                            <constraint firstItem="N3L-sd-thC" firstAttribute="top" secondItem="IuE-7A-eoK" secondAttribute="top" id="QBV-6x-k35"/>
-                            <constraint firstItem="WtA-z5-xqn" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leadingMargin" constant="51" id="UQO-CJ-M9j"/>
-                            <constraint firstItem="AGe-rg-FIl" firstAttribute="top" secondItem="WtA-z5-xqn" secondAttribute="bottom" constant="42" id="X6I-dM-xv0"/>
-                            <constraint firstItem="kkG-0e-qjp" firstAttribute="centerX" secondItem="WtA-z5-xqn" secondAttribute="centerX" id="Yey-Vb-4BK"/>
-                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="centerX" secondItem="kkG-0e-qjp" secondAttribute="centerX" id="aeB-Ea-yBW"/>
-                            <constraint firstItem="N3L-sd-thC" firstAttribute="bottom" secondItem="ixy-sa-0GS" secondAttribute="top" id="gVH-Dn-uhS"/>
-                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leadingMargin" constant="89" id="lpT-HF-fcA"/>
-                            <constraint firstItem="ixy-sa-0GS" firstAttribute="top" secondItem="HKv-BK-I1M" secondAttribute="bottom" constant="132" id="qL9-hc-7aD"/>
-                            <constraint firstItem="NgO-yG-euX" firstAttribute="centerX" secondItem="HKv-BK-I1M" secondAttribute="centerX" id="udr-iS-PTD"/>
-                            <constraint firstItem="AGe-rg-FIl" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leadingMargin" constant="67" id="v3Z-7Y-bHT"/>
+                            <constraint firstItem="N3L-sd-thC" firstAttribute="centerX" secondItem="UyY-Uj-2P5" secondAttribute="centerX" id="0EM-0v-F18"/>
+                            <constraint firstItem="N3L-sd-thC" firstAttribute="bottom" secondItem="ixy-sa-0GS" secondAttribute="top" id="10v-az-PgW"/>
+                            <constraint firstItem="NgO-yG-euX" firstAttribute="centerX" secondItem="HKv-BK-I1M" secondAttribute="centerX" id="2gv-Vx-05H"/>
+                            <constraint firstItem="ixy-sa-0GS" firstAttribute="top" secondItem="HKv-BK-I1M" secondAttribute="bottom" constant="132" id="3Rg-Gq-Gqi"/>
+                            <constraint firstItem="kkG-0e-qjp" firstAttribute="centerX" secondItem="WtA-z5-xqn" secondAttribute="centerX" id="7fC-vN-1St"/>
+                            <constraint firstItem="kkG-0e-qjp" firstAttribute="top" secondItem="UyY-Uj-2P5" secondAttribute="bottom" constant="66" id="88h-aB-xab"/>
+                            <constraint firstItem="WtA-z5-xqn" firstAttribute="top" secondItem="kkG-0e-qjp" secondAttribute="bottom" constant="8" symbolic="YES" id="Day-Lc-AN1"/>
+                            <constraint firstItem="NgO-yG-euX" firstAttribute="top" secondItem="AGe-rg-FIl" secondAttribute="bottom" constant="8" symbolic="YES" id="LIi-hN-4SW"/>
+                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="centerX" secondItem="kkG-0e-qjp" secondAttribute="centerX" id="S2i-da-wlG"/>
+                            <constraint firstItem="N3L-sd-thC" firstAttribute="centerY" secondItem="NgO-yG-euX" secondAttribute="centerY" id="VLN-sq-Qam"/>
+                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="top" secondItem="wEM-j5-Ce4" secondAttribute="bottom" constant="30" id="X0q-9g-i1n"/>
+                            <constraint firstItem="WtA-z5-xqn" firstAttribute="centerX" secondItem="AGe-rg-FIl" secondAttribute="centerX" id="XRh-bU-aI8"/>
+                            <constraint firstAttribute="trailing" secondItem="N3L-sd-thC" secondAttribute="trailing" id="aWc-Af-zPJ"/>
+                            <constraint firstItem="WtA-z5-xqn" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leadingMargin" constant="51" id="brz-qG-wAl"/>
+                            <constraint firstItem="AGe-rg-FIl" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leadingMargin" constant="67" id="e6J-NU-HwF"/>
+                            <constraint firstItem="WtA-z5-xqn" firstAttribute="leading" secondItem="NgO-yG-euX" secondAttribute="leading" id="iF1-dC-4dU"/>
+                            <constraint firstItem="WtA-z5-xqn" firstAttribute="trailing" secondItem="NgO-yG-euX" secondAttribute="trailing" id="lhV-al-qkQ"/>
+                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="leading" secondItem="HKv-BK-I1M" secondAttribute="leading" id="mAZ-f2-YJe"/>
+                            <constraint firstItem="N3L-sd-thC" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leading" id="rTb-L7-PvP"/>
+                            <constraint firstItem="UyY-Uj-2P5" firstAttribute="leading" secondItem="IuE-7A-eoK" secondAttribute="leadingMargin" constant="89" id="tZi-3d-L4J"/>
+                            <constraint firstItem="AGe-rg-FIl" firstAttribute="top" secondItem="WtA-z5-xqn" secondAttribute="bottom" constant="42" id="uzG-PO-EUC"/>
+                            <constraint firstItem="N3L-sd-thC" firstAttribute="top" secondItem="IuE-7A-eoK" secondAttribute="top" id="va9-0D-hWp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Vzf-1z-UDx"/>
@@ -622,7 +660,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-f1-Tvl">
-                                <rect key="frame" x="116" y="43" width="144" height="20"/>
+                                <rect key="frame" x="116.5" y="43" width="143.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="paH-5k-yYj"/>
                                 </constraints>
@@ -892,11 +930,24 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="42M-91-695">
-                                <rect key="frame" x="16" y="85" width="343" height="529"/>
+                                <rect key="frame" x="16" y="85" width="343" height="526"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invyte friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-C3-1Av">
+                                <rect key="frame" x="51" y="50" width="272" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="oIi-51-skz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-ra-TkT">
-                                <rect key="frame" x="169" y="629" width="37" height="30"/>
+                                <rect key="frame" x="146" y="626" width="82" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="MRI-Db-0nW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -904,35 +955,27 @@
                                     <action selector="doneButtonTapped:" destination="z0a-9Y-V4w" eventType="touchUpInside" id="2T9-8s-uzv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invyte friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekT-C3-1Av">
-                                <rect key="frame" x="51" y="50" width="272" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="erL-yh-J74"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="centerX" secondItem="ekT-C3-1Av" secondAttribute="centerX" id="3zS-J7-y9n"/>
-                            <constraint firstAttribute="trailing" secondItem="1VZ-j4-m1r" secondAttribute="trailing" id="4uu-zt-hBU"/>
-                            <constraint firstItem="42M-91-695" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leadingMargin" id="8eD-SC-zVK"/>
-                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leading" id="Bip-DT-Su4"/>
-                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="bottom" secondItem="GEy-9N-NkH" secondAttribute="top" id="RuW-io-x4h"/>
-                            <constraint firstItem="42M-91-695" firstAttribute="top" secondItem="ekT-C3-1Av" secondAttribute="bottom" constant="15" id="ZAK-Zv-8NL"/>
-                            <constraint firstItem="ekT-C3-1Av" firstAttribute="top" secondItem="qh3-E9-bvi" secondAttribute="bottom" constant="30" id="b5u-hl-j8h"/>
-                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="top" secondItem="0PK-pz-Tte" secondAttribute="top" id="bRJ-xw-CeI"/>
-                            <constraint firstItem="42M-91-695" firstAttribute="centerX" secondItem="ajn-ra-TkT" secondAttribute="centerX" id="eUp-mD-3Ft"/>
-                            <constraint firstItem="GEy-9N-NkH" firstAttribute="top" secondItem="ajn-ra-TkT" secondAttribute="bottom" constant="8" symbolic="YES" id="mOu-pb-RfJ"/>
-                            <constraint firstItem="ekT-C3-1Av" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leadingMargin" constant="35" id="r4Z-Cz-SCx"/>
-                            <constraint firstItem="ekT-C3-1Av" firstAttribute="centerX" secondItem="42M-91-695" secondAttribute="centerX" id="wU7-Q5-N4V"/>
-                            <constraint firstItem="ajn-ra-TkT" firstAttribute="top" secondItem="42M-91-695" secondAttribute="bottom" constant="15" id="zo2-Av-zMm"/>
+                            <constraint firstItem="GEy-9N-NkH" firstAttribute="top" secondItem="ajn-ra-TkT" secondAttribute="bottom" constant="8" symbolic="YES" id="0jg-qF-7vJ"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="bottom" secondItem="GEy-9N-NkH" secondAttribute="top" id="1KF-9p-HiZ"/>
+                            <constraint firstItem="42M-91-695" firstAttribute="top" secondItem="ekT-C3-1Av" secondAttribute="bottom" constant="15" id="3ME-F6-a50"/>
+                            <constraint firstItem="ekT-C3-1Av" firstAttribute="centerX" secondItem="42M-91-695" secondAttribute="centerX" id="4jQ-d4-md9"/>
+                            <constraint firstItem="ajn-ra-TkT" firstAttribute="top" secondItem="42M-91-695" secondAttribute="bottom" constant="15" id="6WO-FD-70D"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="centerX" secondItem="ajn-ra-TkT" secondAttribute="centerX" id="DCf-RE-4LK"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leading" id="GSs-UO-BAl"/>
+                            <constraint firstItem="1VZ-j4-m1r" firstAttribute="top" secondItem="0PK-pz-Tte" secondAttribute="top" id="QLe-zt-Fdn"/>
+                            <constraint firstAttribute="trailing" secondItem="1VZ-j4-m1r" secondAttribute="trailing" id="S7x-M0-FcX"/>
+                            <constraint firstItem="42M-91-695" firstAttribute="centerX" secondItem="ajn-ra-TkT" secondAttribute="centerX" id="Sec-gp-4gy"/>
+                            <constraint firstItem="42M-91-695" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leadingMargin" id="akA-7y-P5h"/>
+                            <constraint firstItem="ekT-C3-1Av" firstAttribute="leading" secondItem="0PK-pz-Tte" secondAttribute="leadingMargin" constant="35" id="lCg-Gj-Oqr"/>
+                            <constraint firstItem="ekT-C3-1Av" firstAttribute="top" secondItem="qh3-E9-bvi" secondAttribute="bottom" constant="30" id="y1h-8Y-bOw"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundImage" destination="1VZ-j4-m1r" id="f6E-4C-COp"/>
+                        <outlet property="doneButton" destination="ajn-ra-TkT" id="9TY-Rf-8vU"/>
                         <outlet property="tableView" destination="42M-91-695" id="tq1-2H-1WY"/>
                     </connections>
                 </viewController>
@@ -1060,7 +1103,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDu-Gs-cqP">
-                                <rect key="frame" x="51" y="50" width="273" height="21"/>
+                                <rect key="frame" x="51" y="50" width="273" height="20"/>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1115,7 +1158,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Support Invyte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r8A-h0-8Fh">
-                                <rect key="frame" x="51" y="50" width="273" height="20.5"/>
+                                <rect key="frame" x="51" y="50" width="273" height="20"/>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -1165,13 +1208,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1f-9n-V4A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="18"/>
+            <point key="canvasLocation" x="222" y="58"/>
         </scene>
     </scenes>
     <resources>
         <image name="GatsbyBackground" width="736" height="1377"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zBE-nw-eQF"/>
+        <segue reference="XeP-W4-9qe"/>
     </inferredMetricsTieBreakers>
 </document>

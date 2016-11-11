@@ -15,9 +15,16 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        doneButton.backgroundColor = UIColor.clear
+        doneButton.layer.cornerRadius = 5
+        doneButton.layer.borderWidth = 1
+        doneButton.layer.borderColor = UIColor.white.cgColor
+        
         self.tableView.tableFooterView = UIView()
 
         self.view.backgroundColor = UIColor.black
@@ -70,6 +77,8 @@ class InviteList : UIViewController, UITableViewDelegate, UITableViewDataSource 
             
             
             OneSignal.postNotification(["contents": ["en": "You have a new Invyte!"], "include_player_ids": [FriendSystem.system.friendList[indexPath.row].oneSignalID]])
+            
+            
             
         }
         

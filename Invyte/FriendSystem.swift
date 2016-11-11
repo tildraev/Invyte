@@ -87,8 +87,8 @@ class FriendSystem {
     func getEventsAccepted(_ eventCreatorID: String, completion: @escaping (Event) -> Void) {
         CURRENT_USER_REF.child("Events").observeSingleEvent(of: FIRDataEventType.value, with: { (eventSnapshot) in
             let id = eventCreatorID
-            let titleAndDescription = eventSnapshot.childSnapshot(forPath: id).value
-            completion(Event(creatorID: id, eventTitleAndDescription: titleAndDescription as! String))
+            let titleAndDescription = eventSnapshot.childSnapshot(forPath: id).value as! String
+            completion(Event(creatorID: id, eventTitleAndDescription: titleAndDescription ))
         })
     }
     

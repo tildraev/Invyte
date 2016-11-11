@@ -10,12 +10,15 @@ import Foundation
 
 class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var backgroundImage: UIImageView!
-    
+    var refreshControl = UIRefreshControl()
     @IBOutlet weak var tableview: UITableView!
     
     override func viewDidLoad() {
-        self.tableview.reloadData()
         super.viewDidLoad()
+        self.tableview.reloadData()
+        self.tableview.refreshControl = refreshControl
+        self.refreshControl.addTarget(self, action: #selector(MainMenu.didRefreshList), for: UIControlEvents.valueChanged)
+        
         self.tableview.tableFooterView = UIView()
         tableview.delegate = self
         tableview.dataSource = self
@@ -25,6 +28,12 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
  
         self.view.backgroundColor = UIColor.black
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+    }
+    
+    func didRefreshList(){
+        FriendSystem.system.removeEventRequestObserver()
+        self.viewDidLoad()
+        self.refreshControl.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,7 +55,16 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
         
         // Modify cell
         cell!.label.text = FriendSystem.system.eventList[indexPath.row].titleAndDescription
-
+        cell!.acceptButton.isEnabled = true
+        cell!.acceptButton.setTitle("Accept", for: UIControlState.normal)
+        
+        cell!.declineButton.isEnabled = true
+        cell!.declineButton.setTitle("Decline", for: UIControlState.normal)
+        
+        cell!.descriptionButton.isEnabled = true
+        cell!.descriptionButton.alpha = 1
+        cell!.acceptButton.alpha = 1
+        cell!.declineButton.alpha = 1
         
         cell!.setDescriptionButtonAction {
             let descriptionToAlert = FriendSystem.system.eventList[indexPath.row].titleAndDescription
@@ -57,10 +75,25 @@ class ViewInvytes : UIViewController, UITableViewDelegate, UITableViewDataSource
         
         cell!.setAcceptButtonAction {
             FriendSystem.system.acceptEventRequest(FriendSystem.system.eventList[indexPath.row].creatorID, titleAndDescription: FriendSystem.system.eventList[indexPath.row].titleAndDescription)
+            
+            cell!.acceptButton.isEnabled = false
+            cell!.acceptButton.setTitle("Accepted!", for: UIControlState.disabled)
+            cell!.declineButton.alpha = 0
+            cell!.declineButton.isEnabled = false
+            cell!.descriptionButton.alpha = 0
+            cell!.descriptionButton.isEnabled = false
         }
         
         cell!.setDeclineButtonAction {
             FriendSystem.system.removeEventRequest(FriendSystem.system.eventList[indexPath.row].creatorID)
+            
+            cell!.declineButton.isEnabled = false
+            cell!.declineButton.setTitle("Declined", for: UIControlState.disabled)
+            cell!.acceptButton.isEnabled = false
+            cell!.acceptButton.alpha = 0
+            cell!.descriptionButton.isEnabled = false
+            cell!.descriptionButton.alpha = 0
+            
         }
 
 

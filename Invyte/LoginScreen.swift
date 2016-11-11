@@ -87,7 +87,6 @@ class LoginScreen: UIViewController, UITextFieldDelegate {
     
     @IBAction func createAccountButtonTapped(_ sender: AnyObject) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateAccount")
-        //show(vc!, sender: self)
         present(vc!, animated: true, completion: nil)
     }
     

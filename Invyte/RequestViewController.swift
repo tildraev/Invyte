@@ -44,24 +44,39 @@ class RequestViewController: UIViewController, UITableViewDataSource, UITableVie
         
         // Modify cell
         cell!.label.text = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].username
+        cell!.leftButton.isEnabled = true
+        cell!.rightButton.isEnabled = true
         cell!.rightButton.setTitle("Accept", for: UIControlState.normal)
         cell!.rightButton.setTitleColor(UIColor.green, for: UIControlState.normal)
         cell!.leftButton.isEnabled = true
         cell!.leftButton.setTitle("Decline", for: UIControlState.normal)
         cell!.leftButton.setTitleColor(UIColor.red, for: UIControlState.normal)
+       
         
         cell!.setRightButtonAction {
             let id = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].id
             FriendSystem.system.acceptFriendRequest(id!)
+            cell!.rightButton.isEnabled = false
+            cell!.leftButton.isEnabled = false
+            cell!.leftButton.alpha = 0
+            cell!.rightButton.setTitle("Accepted!", for: UIControlState.disabled)
         }
         
         cell!.setLeftButtonAction {
             let id = FriendSystem.system.requestList[(indexPath as NSIndexPath).row].id
             FriendSystem.system.rejectFriendRequest(id!)
+            cell!.leftButton.isEnabled = false
+            cell!.leftButton.setTitle("Declined!", for: UIControlState.disabled)
+            cell!.rightButton.isEnabled = false
+            cell!.rightButton.alpha = 0
         }
         
         // Return cell
         return cell!
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        FriendSystem.system.removeRequestObserver()
     }
     
 }
