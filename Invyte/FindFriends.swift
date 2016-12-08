@@ -118,14 +118,40 @@ class FindFriends : UIViewController, UITableViewDataSource, UITableViewDelegate
                 }
             )
         }
+        self.tableView.reloadData()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        //return 1
+        var numOfSections: Int = 0
+        if count > 0
+        {
+            //yourTableView.separatorStyle = .SingleLine
+            numOfSections                = 1
+            tableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel     = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            
+            noDataLabel.text             = "No results found"
+            noDataLabel.textColor        = UIColor.white
+            noDataLabel.textAlignment    = .center
+            tableView.backgroundView = noDataLabel
+            tableView.separatorStyle = .none
+        }
+        return numOfSections
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count
+        if count > 0
+        {
+            return count
+        }
+        else
+        {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

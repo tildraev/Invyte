@@ -41,6 +41,10 @@ class FriendSystem {
         return CURRENT_USER_REF.child("Events")
     }
     
+    var CURRENT_USER_REPLY_REF: FIRDatabaseReference {
+        return CURRENT_USER_REF.child("Replies")
+    }
+    
     /** The Firebase reference to the current user's event requests*/
     var CURRENT_USER_EVENT_REQUESTS_REF: FIRDatabaseReference {
         return CURRENT_USER_REF.child("Event Requests")
@@ -59,8 +63,9 @@ class FriendSystem {
             let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
+            let name = snapshot.childSnapshot(forPath: "Name").value as! String
             let id = snapshot.key
-            completion(User(username: username, userEmail: email, userID: id, oneSignalID: oneSignalID))
+            completion(User(username: username, userEmail: email, userID: id, oneSignalID: oneSignalID, name: name))
         })
     }
     /** Gets the User object for the specified user id */
@@ -69,8 +74,9 @@ class FriendSystem {
             let username = snapshot.childSnapshot(forPath: "Username").value as! String
             let email = snapshot.childSnapshot(forPath: "Email").value as! String
             let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
+            let name = snapshot.childSnapshot(forPath: "Name").value as! String
             let id = snapshot.key
-            completion(User(username: username, userEmail: email, userID: id, oneSignalID: oneSignalID))
+            completion(User(username: username, userEmail: email, userID: id, oneSignalID: oneSignalID, name: name))
             }, withCancel: { (error) in
                 print(error.localizedDescription)
         })
@@ -92,56 +98,12 @@ class FriendSystem {
         })
     }
     
-    // MARK: - Account Related
-    
-    /**
-     Creates a new user account with the specified email and password
-     - parameter completion: What to do when the block has finished running. The success variable
-     indicates whether or not the signup was a success
-     */
-    func createAccount(_ email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user, error) in
-            
-            if (error == nil) {
-                // Success
-                var userInfo = [String: AnyObject]()
-                userInfo = ["email": user!.email! as AnyObject]
-                self.CURRENT_USER_REF.setValue(userInfo)
-                completion(true)
-            } else {
-                // Failure
-                completion(false)
-            }
-            
+    func getReply(_ userID: String, completion: @escaping (Reply) -> Void) {
+        CURRENT_USER_REF.child("Replies").observeSingleEvent(of: FIRDataEventType.value, with: { (replySnapshot) in
+            let reply = replySnapshot.childSnapshot(forPath: userID).value as! String
+            completion(Reply(reply: reply, personReplyingID: userID))
         })
     }
-    
-    /**
-     Logs in an account with the specified email and password
-     
-     - parameter completion: What to do when the block has finished running. The success variable
-     indicates whether or not the login was a success
-     */
-//    func loginAccount(_ email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
-//        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
-//            
-//            if (error == nil) {
-//                // Success
-//                completion(true)
-//            } else {
-//                // Failure
-//                completion(false)
-//                print(error)
-//            }
-//            
-//        })
-//    }
-//    
-    /** Logs out an account */
-    func logoutAccount() {
-        try! FIRAuth.auth()?.signOut()
-    }
-    
     
     
     // MARK: - Request System Functions
@@ -183,8 +145,9 @@ class FriendSystem {
                 let username = child.childSnapshot(forPath: "Username").value as! String
                 let email = child.childSnapshot(forPath: "Email").value as! String
                 let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
+                let name = snapshot.childSnapshot(forPath: "Name").value as! String
                 if email != FIRAuth.auth()?.currentUser?.email! {
-                    self.userList.append(User(username: username, userEmail: email, userID: child.key, oneSignalID: oneSignalID))
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key, oneSignalID: oneSignalID, name: name))
                 }
             }
             update()
@@ -196,8 +159,9 @@ class FriendSystem {
                 let username = child.childSnapshot(forPath: "Username").value as! String
                 let email = child.childSnapshot(forPath: "Email").value as! String
                 let oneSignalID = snapshot.childSnapshot(forPath: "OneSignalID").value as! String
+                let name = snapshot.childSnapshot(forPath: "Name").value as! String
                 if email != FIRAuth.auth()?.currentUser?.email! {
-                    self.userList.append(User(username: username, userEmail: email, userID: child.key, oneSignalID: oneSignalID))
+                    self.userList.append(User(username: username, userEmail: email, userID: child.key, oneSignalID: oneSignalID, name: name))
                 }
             }
             update()
@@ -207,6 +171,34 @@ class FriendSystem {
     func removeUserObserver() {
         USER_REF.removeAllObservers()
     }
+    
+    //MARK: - Replies
+    var replyList = [Reply]()
+    
+    func addReplyObserver(_ update: @escaping () -> Void) {
+        CURRENT_USER_REPLY_REF.observe(FIRDataEventType.value, with: { (snapshot) in
+            self.replyList.removeAll()
+            for child in snapshot.children.allObjects as! [FIRDataSnapshot] {
+                let id = child.key
+                self.getReply(id, completion: { (reply) in
+                    self.replyList.append(reply)
+                    update()
+                })
+            }
+            //If no children, run completion here instead
+            if snapshot.childrenCount == 0{
+                update()
+            }
+        })
+        { (error) in
+            print(error)
+        }
+    }
+    
+    func removeReplyObserver(){
+        CURRENT_USER_REPLY_REF.removeAllObservers()
+    }
+
     
     //MARK: - Events
     /**The list of all events of the current user*/
@@ -237,6 +229,7 @@ class FriendSystem {
     func removeEventRequestObserver(){
         CURRENT_USER_EVENT_REQUESTS_REF.removeAllObservers()
     }
+    
 
     var eventsAcceptedList = [Event]()
     
@@ -289,12 +282,14 @@ class FriendSystem {
     /** Removed the event request from the user */
     func removeEventRequest(_ userID: String){
         CURRENT_USER_REF.child("Event Requests").child(userID).removeValue()
+        USER_REF.child(userID).child("Replies").child(CURRENT_USER_ID).setValue("No")
     }
     
     /** Accepts an even from user with the specified ID */
     func acceptEventRequest(_ userID: String, titleAndDescription: String){
         CURRENT_USER_REF.child("Event Requests").child(userID).removeValue()
         CURRENT_USER_REF.child("Events").child(userID).setValue(titleAndDescription)
+        USER_REF.child(userID).child("Replies").child(CURRENT_USER_ID).setValue("Yes")
     }
     
     // MARK: - All friends

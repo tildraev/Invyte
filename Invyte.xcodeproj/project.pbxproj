@@ -35,6 +35,8 @@
 		D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57141DB603FF00212CCB /* RequestViewController.swift */; };
 		D27F57171DB604ED00212CCB /* FriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27F57161DB604ED00212CCB /* FriendViewController.swift */; };
 		D27F57191DB6227900212CCB /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27F57181DB6227900212CCB /* UserCell.xib */; };
+		D28684D71DFA0F2F001CFCF2 /* Replies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28684D61DFA0F2F001CFCF2 /* Replies.swift */; };
+		D28684D91DFA122F001CFCF2 /* Reply.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28684D81DFA122F001CFCF2 /* Reply.swift */; };
 		D2B7AC3A1DC927FC00072961 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B7AC391DC927FC00072961 /* KeychainWrapper.m */; };
 		D2BC12731DA5F85E002142CE /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BC12721DA5F85E002142CE /* CreateAccount.swift */; };
 		D2CC83B31DB8468500A259BE /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2CC83B21DB8468500A259BE /* CustomCell.xib */; };
@@ -107,6 +109,8 @@
 		D27F57141DB603FF00212CCB /* RequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		D27F57161DB604ED00212CCB /* FriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendViewController.swift; sourceTree = "<group>"; };
 		D27F57181DB6227900212CCB /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
+		D28684D61DFA0F2F001CFCF2 /* Replies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Replies.swift; sourceTree = "<group>"; };
+		D28684D81DFA122F001CFCF2 /* Reply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reply.swift; sourceTree = "<group>"; };
 		D2B7AC381DC927FC00072961 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
 		D2B7AC391DC927FC00072961 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
 		D2BC12721DA5F85E002142CE /* CreateAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		D24578231DA2CF290069B686 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D28684D61DFA0F2F001CFCF2 /* Replies.swift */,
 				D24578261DA2E6EE0069B686 /* LoginScreen.swift */,
 				D2BC12721DA5F85E002142CE /* CreateAccount.swift */,
 				D20893581DA4C22A0054AB34 /* MainMenu.swift */,
@@ -198,6 +203,7 @@
 				D27F57181DB6227900212CCB /* UserCell.xib */,
 				D27F57101DB6015600212CCB /* User.swift */,
 				D22EA9A11DB73F0200923A5B /* Event.swift */,
+				D28684D81DFA122F001CFCF2 /* Reply.swift */,
 				D2CC83BA1DB88D8800A259BE /* EventCell.swift */,
 				D2CC83BC1DB88DAC00A259BE /* EventCell.xib */,
 			);
@@ -566,6 +572,7 @@
 				D24578201DA2CF0A0069B686 /* Help.swift in Sources */,
 				D27F57151DB603FF00212CCB /* RequestViewController.swift in Sources */,
 				D24578271DA2E6EE0069B686 /* LoginScreen.swift in Sources */,
+				D28684D91DFA122F001CFCF2 /* Reply.swift in Sources */,
 				D27F57131DB6037300212CCB /* UserCell.swift in Sources */,
 				D27F57111DB6015600212CCB /* User.swift in Sources */,
 				D245781A1DA2CEC20069B686 /* FindFriends.swift in Sources */,
@@ -575,6 +582,7 @@
 				D27398261DA070A200480B4B /* AppDelegate.swift in Sources */,
 				D273985B1DA07C7000480B4B /* BackTableVC.swift in Sources */,
 				D245781C1DA2CEDC0069B686 /* UserInfo.swift in Sources */,
+				D28684D71DFA0F2F001CFCF2 /* Replies.swift in Sources */,
 				D22EA9A41DB73F7C00923A5B /* InviteList.swift in Sources */,
 				D2CC83B51DB8471800A259BE /* CustomCell.swift in Sources */,
 				D27398591DA076CA00480B4B /* SWRevealViewController.m in Sources */,

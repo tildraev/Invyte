@@ -63,13 +63,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invyte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR6-wc-K3y">
-                                <rect key="frame" x="91.5" y="84" width="193.5" height="48"/>
+                                <rect key="frame" x="92" y="84" width="193.5" height="48"/>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIV-2t-HMH">
-                                <rect key="frame" x="91.5" y="450" width="193.5" height="30"/>
+                                <rect key="frame" x="92" y="450" width="193.5" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="UKH-2H-r74"/>
                                 </constraints>
@@ -82,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5d-le-u5R">
-                                <rect key="frame" x="96" y="500" width="183" height="30"/>
+                                <rect key="frame" x="96" y="500" width="185" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yA8-Rh-oXP"/>
                                 </constraints>
@@ -409,7 +409,7 @@
         <!--Main Menu-->
         <scene sceneID="r9r-Vg-5A1">
             <objects>
-                <viewController id="64f-op-1nS" customClass="MainMenu" customModule="Invyte" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainMenu" id="64f-op-1nS" customClass="MainMenu" customModule="Invyte" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4pa-Rg-mJG"/>
                         <viewControllerLayoutGuide type="bottom" id="ErM-jY-WZV"/>
@@ -422,7 +422,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KV-SM-LOv">
-                                <rect key="frame" x="16" y="50" width="343" height="20"/>
+                                <rect key="frame" x="16" y="94" width="343" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ggs-pU-f1l"/>
                                 </constraints>
@@ -440,7 +440,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="current events:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0Q-0W-S6h">
-                                <rect key="frame" x="88" y="227" width="198" height="20"/>
+                                <rect key="frame" x="88.5" y="271" width="197.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="PR5-F3-Ym1"/>
                                 </constraints>
@@ -449,13 +449,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hXt-dW-kdj">
-                                <rect key="frame" x="16" y="265" width="343" height="356"/>
+                                <rect key="frame" x="16" y="309" width="343" height="312"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;  &gt;  &gt;  Swipe to begin  &gt;  &gt;  &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh8-s3-ogn">
-                                <rect key="frame" x="53" y="85" width="269" height="20"/>
+                                <rect key="frame" x="53" y="129" width="269" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="8Jc-Zb-G0M"/>
                                 </constraints>
@@ -464,7 +464,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Friend Request" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdM-Zu-mNj">
-                                <rect key="frame" x="37" y="130" width="301" height="20"/>
+                                <rect key="frame" x="37" y="174" width="301" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="yMG-i3-soy"/>
                                 </constraints>
@@ -473,7 +473,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Invyte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1z-c6-iR5">
-                                <rect key="frame" x="74" y="172" width="226" height="20"/>
+                                <rect key="frame" x="74" y="216" width="226" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="xje-Yq-jtw"/>
                                 </constraints>
@@ -660,7 +660,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Friends" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1MV-f1-Tvl">
-                                <rect key="frame" x="116.5" y="43" width="143.5" height="20"/>
+                                <rect key="frame" x="115" y="43" width="143.5" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="paH-5k-yYj"/>
                                 </constraints>
@@ -677,8 +677,8 @@
                                     <outlet property="delegate" destination="u0b-44-eVf" id="Nuz-yJ-0pq"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First &amp; Last name Or username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy2-mu-1RV">
-                                <rect key="frame" x="72" y="105" width="231" height="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First &amp; Last name  Or username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wy2-mu-1RV">
+                                <rect key="frame" x="70.5" y="105" width="234" height="20"/>
                                 <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="11"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -689,7 +689,7 @@
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eG-S7-BsN">
-                                <rect key="frame" x="130" y="171" width="117" height="33"/>
+                                <rect key="frame" x="128.5" y="171" width="117" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="117" id="CBE-fn-uUK"/>
                                 </constraints>
@@ -982,6 +982,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCy-QR-bSC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3405.5999999999999" y="-663.41829085457277"/>
+        </scene>
+        <!--Replies-->
+        <scene sceneID="kt9-eC-S0N">
+            <objects>
+                <viewController storyboardIdentifier="Replies" id="cia-b3-3JJ" customClass="Replies" customModule="Invyte" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="55T-Pq-gu4"/>
+                        <viewControllerLayoutGuide type="bottom" id="9SS-d5-oHr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zIg-IO-TAE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GatsbyBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Cr2-1S-ubT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Replies" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sE-D5-RDD">
+                                <rect key="frame" x="51" y="50" width="272" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="qjk-5e-UIC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrc-Cb-hM3">
+                                <rect key="frame" x="16" y="85" width="343" height="526"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yoj-aj-p39">
+                                <rect key="frame" x="146" y="628" width="82" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="82" id="mWS-P5-4U3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GameofThrones" family="Game of Thrones" pointSize="17"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="doneButtonTapped:" destination="z0a-9Y-V4w" eventType="touchUpInside" id="Q3d-Ic-DVZ"/>
+                                    <action selector="doneButtonTapped:" destination="cia-b3-3JJ" eventType="touchUpInside" id="aVB-Za-0Am"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9SS-d5-oHr" firstAttribute="top" secondItem="Yoj-aj-p39" secondAttribute="bottom" constant="6" id="0dn-pS-O26"/>
+                            <constraint firstItem="Cr2-1S-ubT" firstAttribute="bottom" secondItem="9SS-d5-oHr" secondAttribute="top" id="4pZ-Pp-FQb"/>
+                            <constraint firstItem="1sE-D5-RDD" firstAttribute="leading" secondItem="zIg-IO-TAE" secondAttribute="leadingMargin" constant="35" id="5ZP-DA-yZa"/>
+                            <constraint firstItem="zrc-Cb-hM3" firstAttribute="top" secondItem="1sE-D5-RDD" secondAttribute="bottom" constant="15" id="BIZ-3e-fCl"/>
+                            <constraint firstItem="Cr2-1S-ubT" firstAttribute="centerX" secondItem="1sE-D5-RDD" secondAttribute="centerX" id="Dxs-yz-mZe"/>
+                            <constraint firstItem="Yoj-aj-p39" firstAttribute="top" secondItem="zrc-Cb-hM3" secondAttribute="bottom" constant="17" id="IBl-3N-ZEw"/>
+                            <constraint firstItem="Cr2-1S-ubT" firstAttribute="top" secondItem="zIg-IO-TAE" secondAttribute="top" id="Kcy-Jo-YFZ"/>
+                            <constraint firstItem="1sE-D5-RDD" firstAttribute="top" secondItem="55T-Pq-gu4" secondAttribute="bottom" constant="30" id="MyA-bv-ARB"/>
+                            <constraint firstItem="Cr2-1S-ubT" firstAttribute="leading" secondItem="zIg-IO-TAE" secondAttribute="leading" id="PPY-iN-WzI"/>
+                            <constraint firstItem="zrc-Cb-hM3" firstAttribute="leading" secondItem="zIg-IO-TAE" secondAttribute="leadingMargin" id="VRl-ru-1dM"/>
+                            <constraint firstItem="1sE-D5-RDD" firstAttribute="centerX" secondItem="zrc-Cb-hM3" secondAttribute="centerX" id="ZnX-hd-dWW"/>
+                            <constraint firstItem="zrc-Cb-hM3" firstAttribute="centerX" secondItem="Yoj-aj-p39" secondAttribute="centerX" id="bKv-Sd-zdo"/>
+                            <constraint firstAttribute="trailing" secondItem="Cr2-1S-ubT" secondAttribute="trailing" id="vkL-ND-yia"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="doneButton" destination="Yoj-aj-p39" id="F2s-3i-xEc"/>
+                        <outlet property="tableView" destination="zrc-Cb-hM3" id="9nQ-yi-1bb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyA-tZ-7gI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4192.8000000000002" y="-663.41829085457277"/>
         </scene>
         <!--Friend View Controller-->
         <scene sceneID="0RK-4f-mWt">

@@ -126,7 +126,15 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell!.label.alpha = 1
         
         cell!.descriptionButton.isEnabled = true
-        cell!.descriptionButton.alpha = 0
+        if(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID == FriendSystem.system.CURRENT_USER_ID)
+        {
+            cell!.descriptionButton.alpha = 1
+            cell!.descriptionButton.setTitle("Replies", for: UIControlState.normal)
+        }
+        else{
+            cell!.descriptionButton.isEnabled = false
+            cell!.descriptionButton.alpha = 0
+        }
         cell!.acceptButton.alpha = 1
         cell!.acceptButton.isEnabled = true
         
@@ -134,8 +142,8 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell!.declineButton.setTitle("Decline", for: UIControlState.normal
         )
         cell!.setDescriptionButtonAction {
-            //
-        }
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "Replies")
+            self.present(vc!, animated: true, completion: nil)        }
         
         cell!.acceptButton.isEnabled = true
         cell!.acceptButton.alpha = 1
@@ -158,6 +166,10 @@ class MainMenu : UIViewController, UITableViewDelegate, UITableViewDataSource {
             cell!.acceptButton.isEnabled = false
             for friend in FriendSystem.system.friendList{
                 FriendSystem.system.USER_REF.child(friend.id).child("Event Requests").child(FriendSystem.system.CURRENT_USER_ID).removeValue()
+            }
+            if(FriendSystem.system.eventsAcceptedList[indexPath.row].creatorID == FriendSystem.system.CURRENT_USER_ID)
+            {
+                FriendSystem.system.CURRENT_USER_REF.child("Replies").removeValue()
             }
         }
         

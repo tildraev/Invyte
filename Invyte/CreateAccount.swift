@@ -86,10 +86,13 @@ class CreateAccount : UIViewController, UITextFieldDelegate {
                 else
                 {
                     self.presentAlertView(issue: "That username is already taken. Please try a different username.")}
-                }, withCancel: { (error) in
+                },
+                
+                withCancel: { (error) in
                     print(error)
             })
         }
+
     }
     
     func presentAlertView(issue: String) {
