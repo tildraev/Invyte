@@ -42,6 +42,8 @@ class CreateEvent : UIViewController, UITextViewDelegate{
         {
             presentAlertView(issue: "Please fill out a title and description for your event.")
         }
+        
+        FriendSystem.system.CURRENT_USER_REF.child("Replies").removeValue()
     }
     
     func presentAlertView(issue: String) {
